@@ -1,0 +1,397 @@
+@charset "UTF-8";
+/* line 5, ../../../../../../Applications/compass.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Applications/compass.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Applications/compass.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Applications/compass.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Applications/compass.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Applications/compass.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Applications/compass.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Applications/compass.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Applications/compass.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 3, ../sass/screen.scss */
+html,
+body {
+  margin: auto;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  position: relative;
+  background-color: #3385ff;
+  background-image: url("data:image/svg+xml,%3Csvg width='84' height='84' viewBox='0 0 84 84' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M84 23c-4.417 0-8-3.584-8-7.998V8h-7.002C64.58 8 61 4.42 61 0H23c0 4.417-3.584 8-7.998 8H8v7.002C8 19.42 4.42 23 0 23v38c4.417 0 8 3.584 8 7.998V76h7.002C19.42 76 23 79.58 23 84h38c0-4.417 3.584-8 7.998-8H76v-7.002C76 64.58 79.58 61 84 61V23zM59.05 83H43V66.95c5.054-.5 9-4.764 9-9.948V52h5.002c5.18 0 9.446-3.947 9.95-9H83v16.05c-5.054.5-9 4.764-9 9.948V74h-5.002c-5.18 0-9.446 3.947-9.95 9zm-34.1 0H41V66.95c-5.053-.502-9-4.768-9-9.948V52h-5.002c-5.184 0-9.447-3.946-9.95-9H1v16.05c5.053.502 9 4.768 9 9.948V74h5.002c5.184 0 9.447 3.946 9.95 9zm0-82H41v16.05c-5.054.5-9 4.764-9 9.948V32h-5.002c-5.18 0-9.446 3.947-9.95 9H1V24.95c5.054-.5 9-4.764 9-9.948V10h5.002c5.18 0 9.446-3.947 9.95-9zm34.1 0H43v16.05c5.053.502 9 4.768 9 9.948V32h5.002c5.184 0 9.447 3.946 9.95 9H83V24.95c-5.053-.502-9-4.768-9-9.948V10h-5.002c-5.184 0-9.447-3.946-9.95-9zM50 50v7.002C50 61.42 46.42 65 42 65c-4.417 0-8-3.584-8-7.998V50h-7.002C22.58 50 19 46.42 19 42c0-4.417 3.584-8 7.998-8H34v-7.002C34 22.58 37.58 19 42 19c4.417 0 8 3.584 8 7.998V34h7.002C61.42 34 65 37.58 65 42c0 4.417-3.584 8-7.998 8H50z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* line 14, ../sass/screen.scss */
+body {
+  line-height: 1.8;
+  font-size: 1.2rem;
+  font-weight: normal;
+  font-family: "Helvetica Neue", Helvetica, "STXihei", "华文细黑", "Microsoft Yahei", "微软雅黑", sans-serif;
+  color: #4C4C4C;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  /* line 14, ../sass/screen.scss */
+  body {
+    font-size: 1rem;
+  }
+}
+
+/* line 26, ../sass/screen.scss */
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+
+/* line 31, ../sass/screen.scss */
+a {
+  text-decoration: none;
+}
+/* line 33, ../sass/screen.scss */
+a:hover {
+  opacity: .8;
+}
+
+/* line 38, ../sass/screen.scss */
+.bg-dark {
+  background-color: rgba(0, 0, 102, 0.8) !important;
+}
+
+/* line 42, ../sass/screen.scss */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* line 48, ../sass/screen.scss */
+.navbar {
+  min-width: 320px;
+  padding: 1.5rem 2rem;
+  z-index: 10000;
+}
+@media screen and (max-width: 767px) {
+  /* line 48, ../sass/screen.scss */
+  .navbar {
+    padding: 1rem 0.5rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* line 55, ../sass/screen.scss */
+  .navbar img {
+    width: 80%;
+  }
+}
+
+/* line 63, ../sass/screen.scss */
+.navbar-brand {
+  margin-right: 2.5rem;
+}
+
+/* line 70, ../sass/screen.scss */
+.navbar-dark .navbar-nav .nav-item .nav-link {
+  color: #fff;
+  padding: 0 1.5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+/* line 80, ../sass/screen.scss */
+.dropdown-menu {
+  margin: .3rem 0 0;
+  color: #212529;
+}
+/* line 83, ../sass/screen.scss */
+.dropdown-menu .dropdown-item {
+  color: #000066;
+}
+/* line 85, ../sass/screen.scss */
+.dropdown-menu .dropdown-item:hover {
+  opacity: .6;
+}
+@media screen and (max-width: 767px) {
+  /* line 83, ../sass/screen.scss */
+  .dropdown-menu .dropdown-item {
+    font-size: 0.9rem;
+  }
+}
+
+/* line 94, ../sass/screen.scss */
+.btn-outline-light {
+  margin-left: -2px;
+}
+
+/* line 98, ../sass/screen.scss */
+.title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #000066;
+  font-size: 3.5rem;
+  padding: 190px 10px 50px;
+  letter-spacing: 2px;
+}
+@media screen and (max-width: 767px) {
+  /* line 98, ../sass/screen.scss */
+  .title {
+    font-size: 2.4rem;
+    padding: 125px 10px 40px;
+  }
+}
+
+/* line 110, ../sass/screen.scss */
+h1 {
+  letter-spacing: 2px;
+  line-height: 1.5;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #fff;
+  margin: 0 30px 50px;
+}
+@media screen and (max-width: 767px) {
+  /* line 110, ../sass/screen.scss */
+  h1 {
+    font-size: 1.5rem;
+    margin: 0 15px 30px;
+  }
+}
+
+/* line 123, ../sass/screen.scss */
+h2 {
+  font-size: 1.3rem;
+  color: #777777;
+}
+@media screen and (max-width: 767px) {
+  /* line 123, ../sass/screen.scss */
+  h2 {
+    font-size: 1rem;
+    padding: 20px 50px 0;
+  }
+}
+
+/* line 132, ../sass/screen.scss */
+.section-wrap {
+  padding: 20px;
+  max-width: 930px;
+  min-width: 280px;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 767px) {
+  /* line 132, ../sass/screen.scss */
+  .section-wrap {
+    padding: 0 20px;
+  }
+}
+
+/* line 147, ../sass/screen.scss */
+.bx-wrapper {
+  border-radius: 30px;
+}
+
+/* line 151, ../sass/screen.scss */
+.slider-wrap {
+  padding: 40px 80px 10px;
+  vertical-align: middle;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* line 151, ../sass/screen.scss */
+  .slider-wrap {
+    padding: 40px 0 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* line 151, ../sass/screen.scss */
+  .slider-wrap {
+    padding: 20px 0 0;
+  }
+}
+@media screen and (max-width: 335px) {
+  /* line 151, ../sass/screen.scss */
+  .slider-wrap {
+    padding: 0;
+  }
+}
+/* line 163, ../sass/screen.scss */
+.slider-wrap img {
+  border-radius: 30px;
+  margin: auto;
+}
+/* line 167, ../sass/screen.scss */
+.slider-wrap p {
+  margin: auto;
+  text-align: left;
+  padding: 30px 50px 40px;
+}
+@media screen and (max-width: 767px) {
+  /* line 167, ../sass/screen.scss */
+  .slider-wrap p {
+    padding: 15px 12px 25px 26px;
+  }
+}
+
+/* line 177, ../sass/screen.scss */
+.toggle-yes {
+  padding-right: 15px;
+}
+/* line 179, ../sass/screen.scss */
+.toggle-yes:hover {
+  opacity: .6;
+}
+@media screen and (max-width: 767px) {
+  /* line 177, ../sass/screen.scss */
+  .toggle-yes {
+    padding-right: 5px;
+  }
+}
+
+/* line 187, ../sass/screen.scss */
+.toggle-no {
+  padding-left: 15px;
+}
+/* line 189, ../sass/screen.scss */
+.toggle-no:hover {
+  opacity: .6;
+}
+@media screen and (max-width: 767px) {
+  /* line 187, ../sass/screen.scss */
+  .toggle-no {
+    padding-left: 5px;
+  }
+}
+
+/* line 197, ../sass/screen.scss */
+.toggle-yes.toggle-selected {
+  color: #00e673;
+}
+
+/* line 202, ../sass/screen.scss */
+.toggle-no.toggle-selected {
+  color: #ff4d40;
+}
+
+/* line 206, ../sass/screen.scss */
+.toggle-label {
+  color: #3385ff;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 80px;
+}
+
+/* line 213, ../sass/screen.scss */
+.toggle-input {
+  position: absolute;
+  left: -9999px;
+}
+
+/* line 218, ../sass/screen.scss */
+.quiz-lawyer {
+  padding-top: 20px;
+}
+
+/* line 222, ../sass/screen.scss */
+.article {
+  padding: 20px 35px;
+  font-weight: 300;
+}
+/* line 225, ../sass/screen.scss */
+.article .form-group {
+  margin-bottom: 30px;
+}
+/* line 227, ../sass/screen.scss */
+.article .form-group .form-check-label {
+  color: #fff;
+}
+/* line 231, ../sass/screen.scss */
+.article .questions {
+  float: left;
+  padding-bottom: 10px;
+  color: #2F2F2F;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+@media screen and (max-width: 767px) {
+  /* line 231, ../sass/screen.scss */
+  .article .questions {
+    font-size: 1.1rem;
+  }
+}
+
+/* line 243, ../sass/screen.scss */
+.article-wrap {
+  max-width: 600px;
+  min-width: 250px;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 255, ../sass/screen.scss */
+.btn-danger {
+  margin: 50px 0 100px;
+  background-color: #ff3300;
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  border-radius: 50px;
+}
