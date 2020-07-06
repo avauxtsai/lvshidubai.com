@@ -261,9 +261,7 @@
                         </p>
                     </div>
                     <div class="slider-wrap">
-                        <h2>Do you feel more sympathy for the rights of the accused now than you did before reading
-                            these
-                            stories?</h2>
+                        <h2>Do you know more about the role of defense lawyers in criminal cases now than you did before reading these stories?</h2>
                         <form>
                             <div>
                                 <a class="toggle-label toggle-yes" data-slide-index="9" href="">
@@ -406,8 +404,7 @@
                         </p>
                     </div>
                     <div class="slider-wrap">
-                        <h2>Do you know more about the need for procedural protections for defendants now than you did
-                            before reading these stories?</h2>
+                        <h2>Do you feel more sympathy for the rights of the accused now than you did before reading these stories?</h2>
                         <form>
                             <div>
                                 <a class="toggle-label toggle-yes" data-slide-index="6" href="">
@@ -604,8 +601,7 @@
                         </p>
                     </div>
                     <div class="slider-wrap">
-                        <h2>Do you know more about the role of defense lawyers in criminal cases now than you did before
-                            reading these stories?</h2>
+                        <h2>Do you feel more sympathy for the rights of the accused now than you did before reading these stories?</h2>
                         <form>
                             <div>
                                 <a class="toggle-label toggle-yes" data-slide-index="8" href="">
@@ -699,8 +695,7 @@
                         </p>
                     </div>
                     <div class="slider-wrap">
-                        <h2>Do you feel more sympathy for juvenile defendants now than before reading these stories?
-                        </h2>
+                        <h2>Do you feel more sympathy for juvenile defendants now than before reading these stories?</h2>
                         <form>
                             <div>
                                 <a class="toggle-label toggle-yes" data-slide-index="6" href="">
@@ -817,8 +812,7 @@
                         </p>
                     </div>
                     <div class="slider-wrap">
-                        <h2>Do you feel more sympathy for the rights of the accused now than you did before reading
-                            these stories?</h2>
+                        <h2>Do you know more about the need for procedural protections for defendants now than you did before reading these stories?</h2>
                         <form>
                             <div>
                                 <a class="toggle-label toggle-yes" data-slide-index="7" href="">
@@ -868,7 +862,7 @@
     </div>
     <article id="share-stories" class="article article-wrap">
         <h1>Share My Story</h1>
-        <form>
+        <form action="POST" data-netlify="true">
             <div class="form-group">
                 <label class="questions" for="formGroupExampleInput">Name</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name (optional)">
@@ -894,6 +888,12 @@
             <div class="form-group">
                 <label class="questions" for="exampleFormControlTextarea1">My Story</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="file" name="myfile" id="myfile" placeholder="Upload File">
+            </div>
+            <div class="form-group">
+                <div data-netlify-recaptcha="true"></div>
             </div>
             <button type="submit" class="btn btn-danger">SUBMIT</button>
         </form>

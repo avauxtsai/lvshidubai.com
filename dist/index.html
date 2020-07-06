@@ -39,6 +39,8 @@
                 adaptiveHeight: true,
                 touchEnabled: false,
                 pagerCustom: '#pagination',
+                //resposive: true,
+                //auto: true,
             });
         });
     </script>
@@ -60,7 +62,7 @@
             }
         });
     </script>
-    <script>
+    <!--<script>
         window.onscroll = function () { myFunction() };
 
         var navbar = document.getElementById("navbar");
@@ -72,6 +74,18 @@
             } else {
                 navbar.classList.remove("sticky");
             }
+        }
+    </script>-->
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-103px";
+            }
+            prevScrollpos = currentScrollPos;
         }
     </script>
     <script>
@@ -86,7 +100,7 @@
 </head>
 
 <body>
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#"><img src="images/icon_45.png" alt="Stories from Criminal Defense Lawyers"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -182,7 +196,7 @@
                         </p>
                     </div>
                     <div class="slider-wrap">
-                        <h2>读完这些故事，你是否更加理解被告的权利？</h2>
+                        <h2>读完这些故事，你是否更加加了解辩护律师在刑事案件中的作用？</h2>
                         <form>
                             <div>
                                 <a class="toggle-label toggle-yes" data-slide-index="9" href="">
@@ -255,7 +269,7 @@
                         </p>
                     </div>
                     <div class="slider-wrap">
-                        <h2>读完这些故事，你是否更加了解对被告进行程序保护的必要性？</h2>
+                        <h2>读完这些故事，你是否更加理解被告的权利？</h2>
                         <form>
                             <div>
                                 <a class="toggle-label toggle-yes" data-slide-index="6" href="">
@@ -338,7 +352,7 @@
                         </p>
                     </div>
                     <div class="slider-wrap">
-                        <h2>读完这些故事，你是否更加加了解辩护律师在刑事案件中的作用？</h2>
+                        <h2>读完这些故事，你是否更加理解被告的权利？</h2>
                         <form>
                             <div>
                                 <a class="toggle-label toggle-yes" data-slide-index="8" href="">
@@ -490,7 +504,7 @@
                         </p>
                     </div>
                     <div class="slider-wrap">
-                        <h2>读完这些故事，你是否更加理解被告的权利？</h2>
+                        <h2>读完这些故事，你是否更加了解对被告进行程序保护的必要性？</h2>
                         <form>
                             <div>
                                 <a class="toggle-label toggle-yes" data-slide-index="7" href="">
@@ -539,7 +553,7 @@
     </div>
     <article id="share-stories" class="article article-wrap">
         <h1>分享我的故事</h1>
-        <form>
+        <form action="POST" data-netlify="true">
             <div class="form-group">
                 <label class="questions" for="formGroupExampleInput">名字</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name (optional)">
@@ -566,8 +580,15 @@
                 <label class="questions" for="exampleFormControlTextarea1">我的故事</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
+            <div class="form-group">
+                <input type="file" name="myfile" id="myfile" placeholder="Upload File">
+            </div>
+            <div class="form-group">
+                <div data-netlify-recaptcha="true"></div>
+            </div>
             <button type="submit" class="btn btn-danger">提交</button>
         </form>
     </article>
 </body>
+
 </html>
