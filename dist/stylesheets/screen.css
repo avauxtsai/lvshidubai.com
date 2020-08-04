@@ -118,6 +118,10 @@ a:hover {
   min-width: 320px;
   padding: 1.5rem 2rem;
   z-index: 10000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.3s;
 }
 @media screen and (max-width: 767px) {
   /* line 43, ../sass/screen.scss */
@@ -126,18 +130,18 @@ a:hover {
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 50, ../sass/screen.scss */
+  /* line 55, ../sass/screen.scss */
   .navbar img {
     width: 80%;
   }
 }
 
-/* line 57, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 .navbar-brand {
   margin-right: 2.5rem;
 }
 
-/* line 64, ../sass/screen.scss */
+/* line 69, ../sass/screen.scss */
 .navbar-dark .navbar-nav .nav-item .nav-link {
   color: #fff;
   padding: 0 1.5rem;
@@ -145,48 +149,48 @@ a:hover {
   letter-spacing: 2px;
 }
 
-/* line 74, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 .dropdown-menu {
   margin: .3rem 0 0;
   color: #212529;
 }
-/* line 77, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 .dropdown-menu .dropdown-item {
   color: #ff3300;
 }
-/* line 79, ../sass/screen.scss */
+/* line 84, ../sass/screen.scss */
 .dropdown-menu .dropdown-item:hover {
   opacity: .6;
 }
 @media screen and (max-width: 767px) {
-  /* line 77, ../sass/screen.scss */
+  /* line 82, ../sass/screen.scss */
   .dropdown-menu .dropdown-item {
     font-size: 0.9rem;
   }
 }
 
-/* line 88, ../sass/screen.scss */
+/* line 93, ../sass/screen.scss */
 .btn-outline-light {
   margin-left: -2px;
 }
 
-/* line 92, ../sass/screen.scss */
+/* line 97, ../sass/screen.scss */
 .title {
   font-family: "Hannotate SC", Georgia, 'Times New Roman', Times, serif;
   color: #ff3300;
   font-size: 3.5rem;
-  padding: 75px 10px 50px;
+  padding: 175px 10px 50px;
   letter-spacing: 2px;
 }
 @media screen and (max-width: 767px) {
-  /* line 92, ../sass/screen.scss */
+  /* line 97, ../sass/screen.scss */
   .title {
     font-size: 2.4rem;
-    padding: 45px 10px 40px;
+    padding: 145px 10px 40px;
   }
 }
 
-/* line 104, ../sass/screen.scss */
+/* line 109, ../sass/screen.scss */
 h1 {
   font-family: "Hannotate SC", Georgia, 'Times New Roman', Times, serif;
   letter-spacing: 2px;
@@ -197,27 +201,27 @@ h1 {
   margin: 0 30px 50px;
 }
 @media screen and (max-width: 767px) {
-  /* line 104, ../sass/screen.scss */
+  /* line 109, ../sass/screen.scss */
   h1 {
     font-size: 1.5rem;
     margin: 0 15px 30px;
   }
 }
 
-/* line 118, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 h2 {
   font-size: 1.3rem;
   color: #777777;
 }
 @media screen and (max-width: 767px) {
-  /* line 118, ../sass/screen.scss */
+  /* line 123, ../sass/screen.scss */
   h2 {
     font-size: 1rem;
     padding: 20px 50px 0;
   }
 }
 
-/* line 127, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
 .section-wrap {
   max-width: 400px;
   min-width: 280px;
@@ -229,30 +233,30 @@ h2 {
   box-sizing: border-box;
 }
 @media screen and (max-width: 767px) {
-  /* line 127, ../sass/screen.scss */
+  /* line 132, ../sass/screen.scss */
   .section-wrap {
     padding: 0 20px;
   }
 }
 
-/* line 142, ../sass/screen.scss */
+/* line 147, ../sass/screen.scss */
 .bx-wrapper {
   border-radius: 30px;
 }
 
-/* line 146, ../sass/screen.scss */
+/* line 151, ../sass/screen.scss */
 .bx-wrapper .bx-prev {
   position: absolute;
   left: 5%;
 }
 
-/* line 153, ../sass/screen.scss */
+/* line 158, ../sass/screen.scss */
 .bx-wrapper .bx-next {
   position: absolute;
   right: 5%;
 }
 
-/* line 158, ../sass/screen.scss */
+/* line 163, ../sass/screen.scss */
 .bx-wrapper img {
   width: 400px;
   display: block;
@@ -260,91 +264,91 @@ h2 {
   margin: auto;
 }
 
-/* line 165, ../sass/screen.scss */
+/* line 170, ../sass/screen.scss */
 .slider-wrap {
   padding: 40px 80px 10px;
   vertical-align: middle;
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  /* line 165, ../sass/screen.scss */
+  /* line 170, ../sass/screen.scss */
   .slider-wrap {
     padding: 40px 70px 10px;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 165, ../sass/screen.scss */
+  /* line 170, ../sass/screen.scss */
   .slider-wrap {
     padding: 20px 35px 0;
   }
 }
 @media screen and (max-width: 345px) {
-  /* line 165, ../sass/screen.scss */
+  /* line 170, ../sass/screen.scss */
   .slider-wrap {
     padding: 10px 10px 0;
   }
 }
 
-/* line 179, ../sass/screen.scss */
+/* line 184, ../sass/screen.scss */
 .toggle-yes {
   color: #00e673;
   padding-right: 15px;
 }
 @media screen and (max-width: 767px) {
-  /* line 179, ../sass/screen.scss */
+  /* line 184, ../sass/screen.scss */
   .toggle-yes {
     padding-right: 5px;
   }
 }
 
-/* line 187, ../sass/screen.scss */
+/* line 192, ../sass/screen.scss */
 .toggle-no {
   color: #ff4d40;
   padding-left: 15px;
 }
 @media screen and (max-width: 767px) {
-  /* line 187, ../sass/screen.scss */
+  /* line 192, ../sass/screen.scss */
   .toggle-no {
     padding-left: 5px;
   }
 }
 
-/* line 195, ../sass/screen.scss */
+/* line 200, ../sass/screen.scss */
 .toggle-yes.toggle-selected {
   color: #000066;
 }
 
-/* line 199, ../sass/screen.scss */
+/* line 204, ../sass/screen.scss */
 .toggle-no.toggle-selected {
   color: #000066;
 }
 
-/* line 203, ../sass/screen.scss */
+/* line 208, ../sass/screen.scss */
 .toggle-label {
   display: inline-block;
   cursor: pointer;
   font-size: 80px;
 }
 
-/* line 210, ../sass/screen.scss */
+/* line 215, ../sass/screen.scss */
 .toggle-input {
   position: absolute;
   left: -9999px;
 }
 
-/* line 215, ../sass/screen.scss */
+/* line 220, ../sass/screen.scss */
 .article {
   padding: 20px 35px;
   font-weight: 300;
 }
-/* line 218, ../sass/screen.scss */
+/* line 223, ../sass/screen.scss */
 .article .form-group {
   margin-bottom: 30px;
 }
-/* line 220, ../sass/screen.scss */
+/* line 225, ../sass/screen.scss */
 .article .form-group .form-check-label {
   color: #fff;
 }
-/* line 224, ../sass/screen.scss */
+/* line 229, ../sass/screen.scss */
 .article .questions {
   float: left;
   padding-bottom: 10px;
@@ -353,13 +357,13 @@ h2 {
   font-weight: 400;
 }
 @media screen and (max-width: 767px) {
-  /* line 224, ../sass/screen.scss */
+  /* line 229, ../sass/screen.scss */
   .article .questions {
     font-size: 1.1rem;
   }
 }
 
-/* line 236, ../sass/screen.scss */
+/* line 241, ../sass/screen.scss */
 .article-wrap {
   max-width: 600px;
   min-width: 250px;
@@ -371,7 +375,7 @@ h2 {
   box-sizing: border-box;
 }
 
-/* line 248, ../sass/screen.scss */
+/* line 253, ../sass/screen.scss */
 .btn-danger {
   margin: 50px 0 100px;
   background-color: #ff3300;
