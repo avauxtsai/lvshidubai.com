@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories from Criminal Defense Lawyers</title>
+
+    <!--Bootstrap CDN v4.5.0 ***jQuery first, then Popper.js, then Bootstrap JS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!--Sass/Scss-->
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css">
+    <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <!--icon-->
+    <link rel="shortcut icon" href="images/favicon_32.png" type="image/x-icon">
+
+    <!--jQuery: content slider, bxslider-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X19S0523JX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-X19S0523JX');
+    </script>
+
+    <!--Bootstrap CDN v4.5.0 ***jQuery first, then Popper.js, then Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <!--jQuery: content slider, bxslider-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slider').bxSlider({
+                adaptiveHeight: true,
+                touchEnabled: false,
+                pagerCustom: '#pagination',
+                //resposive: true,
+                //auto: true,
+            });
+        });
+    </script>
+
+    <!--randomize stories on page load-->
+    <!--<script>
+        $(function () {
+            var parent = $("#shuffle");
+            var sections = parent.children();
+            while (sections.length) {
+                parent.append(sections.splice(Math.floor(Math.random() * sections.length), 1)[0]);
+            }
+        });
+    </script>-->
+    <script>
+        $(function () {
+            var parent = $("#shuffle");
+            var sections = parent.children();
+            var random = Math.floor(Math.random() * sections.length);
+            sections.hide().eq(random).show();
+            while (sections.length) {
+                parent.append(sections.splice(Math.floor(Math.random() * sections.length), 1)[0]);
+            }
+        });
+    </script>
+
+    <!--shuffle navbar on page load-->
+    <script>
+        $(function () {
+            var parent = $("#nav-shuffle");
+            var as = parent.children();
+            while (as.length) {
+                parent.append(as.splice(Math.floor(Math.random() * as.length), 1)[0]);
+            }
+        });
+    </script>
+
+    <!--navbar-->
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-120px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+
+    <!--Quiz: Yes or No-->
+    <script>
+        $(document).ready(function () {
+            $('body').on('click', '.toggle-label', function (e) {
+                e.preventDefault();
+                var $radio = $(this);
+                $radio.addClass('toggle-selected').siblings().removeClass('toggle-selected');
+            })
+        });
+    </script>
+
+</head>
+
+<body>
+    <!--Menu-->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="en.html"><img src="images/icon_60.png" alt="Stories from Criminal Defense Lawyers"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle my-2 my-sm-0" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        STORIES FROM LAWYERS
+                    </a>
+                    <div id="nav-shuffle" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="story1-en.html">One Defendant, Four Capital Crimes</a>
+                        <a class="dropdown-item" href="story2-en.html">Defending a Client with Mental Illness</a>
+                        <a class="dropdown-item" href="story3-en.html">A Recanted Confession and an Insis...</a>
+                        <a class="dropdown-item" href="story4-en.html">Facing the Legal System as a Juvenile...</a>
+                        <a class="dropdown-item" href="story5-en.html">Lost In Translation</a>
+                        <!--202009 new stories-->    
+                        <a class="dropdown-item" href="story6-en.html">Exonerating a Family</a>
+                        <a class="dropdown-item" href="story8-en.html">Constitutional Protections for Ethnic...</a>
+                        <a class="dropdown-item" href="story11-en.html">Stories from Criminal Defense Lawyers 11</a>
+                        <a class="dropdown-item" href="story14-en.html">Interviewing the Client</a>
+                        <a class="dropdown-item" href="story15-en.html">Hope for the Future</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link my-2 my-sm-0" href="share-my-story-en.html">SHARE MY STORY</a>
+                </li>
+            </ul>
+            <!--Search Function
+                <form class="form-inline my-2 my-sm-0 nav-link">
+                <div class="input-group">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light " type="submit">
+                        <span class="fas fa-search"></span>
+                    </button>
+                </div>
+            </form>-->
+            <div class="nav-link">
+                <a href="index.html" class="btn btn-outline-light my-2 my-sm-0">
+                    <span>中</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="title"></div>
+
+            <!--Story15-->
+            <section id="story15" class="section-wrap">
+                <!--<h1>Hope for the Future</h1>-->
+                <div class="slider">
+                    <div>
+                        <figure>
+                            <img src="images/stories_15/15_01_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_15/15_02_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_15/15_03_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_15/15_04_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_015/15_05_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>Do you feel more sympathy for the rights of the accused now than you did before reading these stories?</h2>
+                        <form>
+                            <div>
+                                <a class="toggle-label toggle-yes" data-slide-index="6" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="6" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>Are you a lawyer?</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="7" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>If you're a lawyer, did these stories inspire you to try new strategies in
+                            representing your clients?</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+</body>
+</html>

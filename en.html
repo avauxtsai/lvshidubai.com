@@ -5,15 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stories from Criminal Defense Lawyers</title>
+
+    <!--Bootstrap CDN v4.5.0 ***jQuery first, then Popper.js, then Bootstrap JS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!--Sass/Scss-->
     <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
     <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css">
     <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <!--icon-->
     <link rel="shortcut icon" href="images/favicon_32.png" type="image/x-icon">
+
+    <!--jQuery: content slider, bxslider-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X19S0523JX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -22,6 +32,8 @@
 
         gtag('config', 'G-X19S0523JX');
     </script>
+
+    <!--Bootstrap CDN v4.5.0 ***jQuery first, then Popper.js, then Bootstrap JS-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -31,6 +43,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+
+    <!--jQuery: content slider, bxslider-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script>
@@ -39,10 +53,14 @@
                 adaptiveHeight: true,
                 touchEnabled: false,
                 pagerCustom: '#pagination',
+                //resposive: true,
+                //auto: true,
             });
         });
     </script>
-    <script>
+
+    <!--randomize stories on page load-->
+    <!--<script>
         $(function () {
             var parent = $("#shuffle");
             var sections = parent.children();
@@ -50,7 +68,20 @@
                 parent.append(sections.splice(Math.floor(Math.random() * sections.length), 1)[0]);
             }
         });
+    </script>-->
+    <script>
+        $(function () {
+            var parent = $("#shuffle");
+            var sections = parent.children();
+            var random = Math.floor(Math.random() * sections.length);
+            sections.hide().eq(random).show();
+            while (sections.length) {
+                parent.append(sections.splice(Math.floor(Math.random() * sections.length), 1)[0]);
+            }
+        });
     </script>
+
+    <!--shuffle navbar on page load-->
     <script>
         $(function () {
             var parent = $("#nav-shuffle");
@@ -60,20 +91,22 @@
             }
         });
     </script>
+
+    <!--navbar-->
     <script>
-        window.onscroll = function () { myFunction() };
-
-        var navbar = document.getElementById("navbar");
-        var sticky = navbar.offsetTop;
-
-        function myFunction() {
-            if (window.pageYOffset >= sticky) {
-                navbar.classList.add("sticky")
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
             } else {
-                navbar.classList.remove("sticky");
+                document.getElementById("navbar").style.top = "-120px";
             }
+            prevScrollpos = currentScrollPos;
         }
     </script>
+
+    <!--Quiz: Yes or No-->
     <script>
         $(document).ready(function () {
             $('body').on('click', '.toggle-label', function (e) {
@@ -83,34 +116,51 @@
             })
         });
     </script>
+
 </head>
+
 <body>
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky">
-        <a class="navbar-brand" href="#"><img src="images/icon_45.png" alt="Stories from Criminal Defense Lawyers"></a>
+    <!--Menu-->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="en.html"><img src="images/icon_60.png" alt="Stories from Criminal Defense Lawyers"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle my-2 my-sm-0" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        LAWYER STORIES
+                        STORIES FROM LAWYERS
                     </a>
                     <div id="nav-shuffle" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#story1">One Defendant, Four Capital Crimes</a>
-                        <a class="dropdown-item" href="#story2">Defending a Client with Mental Illness</a>
-                        <a class="dropdown-item" href="#story3">A Recanted Confession and an Insis...</a>
-                        <a class="dropdown-item" href="#story4">Facing the Legal System as a Juvenile...</a>
-                        <a class="dropdown-item" href="#story5">Lost In Translation</a>
+                        <a class="dropdown-item" href="story1-en.html">One Defendant, Four Capital Crimes</a>
+                        <a class="dropdown-item" href="story2-en.html">Defending a Client with Mental Illness</a>
+                        <a class="dropdown-item" href="story3-en.html">A Recanted Confession and an Insis...</a>
+                        <a class="dropdown-item" href="story4-en.html">Facing the Legal System as a Juvenile...</a>
+                        <a class="dropdown-item" href="story5-en.html">Lost In Translation</a>
+                        <!--202009 new stories-->    
+                        <a class="dropdown-item" href="story6-en.html">Exonerating a Family</a>
+                        <a class="dropdown-item" href="story8-en.html">Constitutional Protections for Ethnic...</a>
+                        <a class="dropdown-item" href="story11-en.html">Stories from Criminal Defense Lawyers 11</a>
+                        <a class="dropdown-item" href="story14-en.html">Interviewing the Client</a>
+                        <a class="dropdown-item" href="story15-en.html">Hope for the Future</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link my-2 my-sm-0" href="#share-stories">SHARE MY STORY</a>
+                    <a class="nav-link my-2 my-sm-0" href="share-my-story-en.html">SHARE MY STORY</a>
                 </li>
             </ul>
+            <!--Search Function
+                <form class="form-inline my-2 my-sm-0 nav-link">
+                <div class="input-group">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light " type="submit">
+                        <span class="fas fa-search"></span>
+                    </button>
+                </div>
+            </form>-->
             <div class="nav-link">
                 <a href="index.html" class="btn btn-outline-light my-2 my-sm-0">
                     <span>中</span>
@@ -118,152 +168,59 @@
             </div>
         </div>
     </nav>
-    <div class="title">STORIES FROM CRIMINAL<br>DEFENSE LAWYERS</div>
+
+    <div class="title"></div>
+
     <article id="pagination">
+
         <div id="shuffle">
+            <!--Story1-->
             <section id="story1" class="section-wrap">
-                <h1>One Defendant, Four Capital Crimes</h1>
+                <!--<h1>One Defendant<br>Four Capital Crimes</h1>-->
                 <div class="slider">
-                    <div class="slider-wrap">
+                    <div>
                         <figure>
-                            <img src="images/stories_01/01_01.jpg" alt="">
+                            <img src="images/stories_01/01_01_eng.jpg" alt="">
                         </figure>
-                        <p>I come from Yunnan, and I’m now in my tenth year of
-                            practicing law. Protecting individual
-                            freedom
-                            against
-                            the
-                            powerful authority of the state to take freedom away is an important contribution to the
-                            overall
-                            mission
-                            of
-                            justice. Confining someone to a cell and restricting his contact with others are serious
-                            limits
-                            on a
-                            person’s rights. There must be a just cause to do this. Lawyers choose to represent criminal
-                            clients
-                            because
-                            we want to make sure that a high standard of law is being applied to these important
-                            cases.</p>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_01/01_02_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_01/01_03_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_01/01_04_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_01/01_05_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_01/01_06_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_01/01_07_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_01/01_08_eng.jpg" alt="">
+                        </figure>
                     </div>
                     <div class="slider-wrap">
-                        <figure>
-                            <img src="images/stories_01/01_02.jpg" alt="">
-                        </figure>
-                        <p>During my second year of practice, I worked on a case
-                            where the defendant faced a long list of
-                            very
-                            serious
-                            charges -- murder, drug trafficking, rape, robbery -- each potentially carrying the death
-                            penalty.
-                            The
-                            prosecutors went ahead and charged him with four capital crimes. There was only about one
-                            week
-                            from
-                            the
-                            time
-                            I took the case until the court appearance. However, as I became familiar with the case, I
-                            realized
-                            that
-                            each of the four charges had serious evidentiary problems. A closer look at the evidence
-                            showed
-                            that
-                            the
-                            prosecutors lacked fundamental proof of crime, let alone sufficient proof to warrant the
-                            most
-                            serious
-                            sentence imaginable.</p>
-                    </div>
-                    <div class="slider-wrap">
-                        <figure>
-                            <img src="images/stories_01/01_03.jpg" alt="">
-                        </figure>
-                        <p>For the drug trafficking charge, there was no physical evidence. There were no drugs seized.
-                            The
-                            prosecutor
-                            had charged my client based solely on the word of another person. There was no evidence of
-                            any
-                            other
-                            kind.
-                            To seek the death penalty simply on the word of another person shows how dangerous the death
-                            penalty
-                            can
-                            be.
-                            It was excessive. How can a person be convicted of drug trafficking without basic evidence
-                            such
-                            as
-                            drugs,
-                            money, or transactions -- let alone be sentenced to death? I stepped in to oppose the death
-                            penalty,
-                            challenging the strength of the case.</p>
-                    </div>
-                    <div class="slider-wrap">
-                        <figure>
-                            <img src="images/stories_01/01_04.jpg" alt="">
-                        </figure>
-                        <p>Rape is an extremely serious crime. However, in this case, the two other co-defendants who
-                            had
-                            confessed were given sentences of 12 to 15 years. They were spared death, but my client was
-                            being charged with the death penalty. There was no physical or DNA evidence linking any of
-                            them
-                            to the crime, so what accounts for the discrepancy in sentencing? Why was my client being
-                            charged with the death penalty? Was it simply as a punishment for not confessing?</p>
-                    </div>
-                    <div class="slider-wrap">
-                        <figure>
-                            <img src="images/stories_01/01_05.jpg" alt="">
-                        </figure>
-                        <p>As for the robbery charge, in my opinion, it didn’t warrant a death penalty. It wasn’t
-                            technically a robbery, but theft from a dead body. In some cases, robbery can be even more
-                            serious than murder. Murder can be a crime of instantaneous passion, but robbery is always
-                            premeditated to some degree. However, taking something from a dead body is not the same as
-                            threatening a live person with violence in order to steal property.
-                        </p>
-                    </div>
-                    <div class="slider-wrap">
-                        <figure>
-                            <img src="images/stories_01/01_06.jpg" alt="">
-                        </figure>
-                        <p>Finally, for the murder charge, the accused had surrendered to the police and claimed to have
-                            killed someone. The police sent an excavator to search for a body, but never found anything.
-                            Without a body, there is no way to know if it is a real case. Was there a murder or not?
-                            There
-                            was also some cell-phone evidence suggesting that the presumed victim thought to be dead was
-                            in
-                            fact still alive. Apparently the “victim” had sent messages after the time when he had
-                            supposedly died.
-                        </p>
-                    </div>
-                    <div class="slider-wrap">
-                        <figure>
-                            <img src="images/stories_01/01_07.jpg" alt="">
-                        </figure>
-                        <p>At the first trial, we got an acquittal on the murder charge. When my client was acquitted, I
-                            could see hope in his eyes. We appealed on the remaining charges, and had both the rape and
-                            drug
-                            trafficking sentences reduced to imprisonment.</p>
-                    </div>
-                    <div class="slider-wrap">
-                        <figure>
-                            <img src="images/stories_01/01_08.jpg" alt="">
-                        </figure>
-                        <p>But after two appeals, he still faced death-penalty charges for the remaining charge of
-                            robbery.
-                            We appealed and lost one more time. As far as I know, he was eventually executed. I don’t
-                            know
-                            if my defense helped him or not, but I hope it gave him the will to live. Because this case
-                            happened early in my career, it has special significance for me. This case makes very clear
-                            why
-                            defendants need lawyers and what role we play. When we defend clients against weak evidence,
-                            we
-                            are strengthening the entire legal system. I think we can help defendants believe in justice
-                            during their darkest time. I’ll keep doing it.
-                        </p>
-                    </div>
-                    <div class="slider-wrap">
-                        <h2>Do you feel more sympathy for the rights of the accused now than you did before reading
-                            these
-                            stories?</h2>
+                        <h2>Do you know more about the role of defense lawyers in criminal cases now than you did before
+                            reading these stories?</h2>
                         <form>
                             <div>
                                 <a class="toggle-label toggle-yes" data-slide-index="9" href="">
@@ -281,7 +238,7 @@
                         <h2>Are you a lawyer?</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="10" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
@@ -291,7 +248,9 @@
                                 </a>
                             </div>
                         </form>
-                        <h2 class="quiz-lawyer">If yes, did these stories inspire you to try new strategies in
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>If you're a lawyer, did these stories inspire you to try new strategies in
                             representing your clients?</h2>
                         <form>
                             <div class="toggle-set">
@@ -306,108 +265,41 @@
                             </div>
                         </form>
                     </div>
-
                 </div>
             </section>
+
+            <!--Story2-->
             <section id="story2" class="section-wrap">
-                <h1>Defending a Client with Mental Illness</h1>
+                <!--<h1>Defending a Client with Mental Illness</h1>-->
                 <div class="slider">
-                    <div class="slider-wrap">
-                        <img src="images/stories_02/02_01.jpg" alt="">
-                        <p>I have been in practice for over two decades, and am now a partner in a firm that specializes
-                            in
-                            criminal
-                            defense. I once took up a very famous case. There was a cab driver who went berserk and
-                            killed
-                            more
-                            than
-                            twenty people. The events took place in a busy area with crowds of people. He wasn’t a
-                            serial
-                            killer
-                            who
-                            murdered many people over a long period of time, this was one killing spree. It was a very
-                            sensational
-                            case.
-                            He was charged with multiple murders and faced the death penalty. I hoped I could
-                            participate in
-                            this
-                            case
-                            for some benefit to the public.
-                        </p>
+                    <div>
+                        <figure>
+                            <img src="images/stories_02/02_01_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_02/02_02_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_02/02_03_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_02/02_04_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_02/02_05_eng.jpg" alt="">
+                        </figure>
                     </div>
                     <div class="slider-wrap">
-                        <img src="images/stories_02/02_02.jpg" alt="">
-                        <p>Our argument for the defense was that my client was mentally unstable and therefore cannot be
-                            treated
-                            as
-                            a
-                            normal defendant. The law provides for such exceptional cases, but of course it is very
-                            difficult to
-                            make
-                            this argument. It is rare for a court to take insanity into consideration. But as we built
-                            our
-                            case,
-                            we
-                            became absolutely convinced that we had an exceptional situation on our hands.
-                        </p>
-                    </div>
-                    <div class="slider-wrap">
-                        <img src="images/stories_02/02_03.jpg" alt="">
-                        <p>The goal was to obtain a court-ordered mental evaluation, which would have the highest
-                            evidentiary
-                            weight,
-                            and whose legitimacy would be hard to challenge. I studied a lot of books about mental
-                            health,
-                            and
-                            we
-                            tried
-                            to match my client’s situation with the conditions we read about. We researched the family’s
-                            history
-                            with
-                            mental illness, any instances of abuse or trauma, and whether the defendant demonstrated
-                            unstable
-                            behavior
-                            before the killings. We found that he had relatives who suffered from mental illness, that
-                            there
-                            had
-                            been
-                            cases of incest in the family, and that he himself was not behaving normally before he
-                            committed
-                            the
-                            murders. We documented all of this for the court, submitting proof of family history, recent
-                            odd
-                            behavior,
-                            and so on.
-                        </p>
-                    </div>
-                    <div class="slider-wrap">
-                        <img src="images/stories_02/02_04.jpg" alt="">
-                        <p>Eventually, we succeeded in persuading the court. The weight of all this evidence moved the
-                            judge
-                            to rule in our favor. My client’s mental health was rapidly deteriorating, and the judge
-                            could
-                            see that he was not competent to stand trial and needed immediate treatment. The judge
-                            ordered a
-                            formal evaluation, which concluded that in fact the defendant was genuinely mentally ill. He
-                            ended up receiving a fifteen-year sentence.
-                        </p>
-                    </div>
-                    <div class="slider-wrap">
-                        <img src="images/stories_02/02_05.jpg" alt="">
-                        <p>I was proud of my accomplishment in serving my client, and that case had a big impact on my
-                            career. Being a criminal defense attorney is like being a doctor. We have technology that
-                            can
-                            assist the doctor, or the team surrounding the doctor might increase his effectiveness, but
-                            the
-                            doctor still needs a strong inner drive and ability. Personal ability matters most. A good
-                            lawyer is not easily replaced. I helped my client avoid execution by pursuing a rare
-                            strategy, a
-                            rare treatment, which required extraordinary preparation and some innovation.
-                        </p>
-                    </div>
-                    <div class="slider-wrap">
-                        <h2>Do you know more about the need for procedural protections for defendants now than you did
-                            before reading these stories?</h2>
+                        <h2>Do you feel more sympathy for the rights of the accused now than you did before reading
+                            these stories?</h2>
                         <form>
                             <div>
                                 <a class="toggle-label toggle-yes" data-slide-index="6" href="">
@@ -425,7 +317,7 @@
                         <h2>Are you a lawyer?</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="7" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
@@ -435,7 +327,9 @@
                                 </a>
                             </div>
                         </form>
-                        <h2 class="quiz-lawyer">If yes, did these stories inspire you to try new strategies in
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>If you're a lawyer, did these stories inspire you to try new strategies in
                             representing your clients?</h2>
                         <form>
                             <div class="toggle-set">
@@ -450,162 +344,51 @@
                             </div>
                         </form>
                     </div>
-
                 </div>
             </section>
+
+            <!--Story3-->
             <section id="story3" class="section-wrap">
-                <h1>A Recanted Confession<br>and an Insistence on Innocence</h1>
+                <!--<h1>A Recanted Confession and an Insistence on Innocence</h1>-->
                 <div class="slider">
-                    <div class="slider-wrap">
-                        <img src="images/stories_03/03_01.jpg" alt="">
-                        <p>I once had a case which was remarkable because it was brought to me not by the accused or his
-                            family,
-                            but
-                            by
-                            the director of the prison, which is pretty unusual. The events in question took place 25
-                            years
-                            ago
-                            when
-                            the
-                            accused was only in his twenties. The facts of the case are as follows: There were two small
-                            villages in
-                            a
-                            remote area. An event was taking place one night where the village youth would gather
-                            together
-                            to
-                            sing
-                            and
-                            dance. At about 10 pm that evening, two young men met in the road between the two villages.
-                            There
-                            was an
-                            explosion in the road, an explosive device had been placed underground, and one of the two
-                            youths
-                            died.
-                        </p>
+                    <div>
+                        <figure>
+                            <img src="images/stories_03/03_01_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_03/03_02_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_03/03_03_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_03/03_04_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_03/03_05_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_03/03_06_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_03/03_07_eng.jpg" alt="">
+                        </figure>
                     </div>
                     <div class="slider-wrap">
-                        <img src="images/stories_03/03_02.jpg" alt="">
-                        <p>This was a very small village and, as you can imagine, there were no security cameras 25
-                            years
-                            ago
-                            like
-                            there
-                            are today. At 10 pm, it was also very dark. Given the situation and lack of technology, it
-                            was a
-                            difficult
-                            case for the police to investigate. The police questioned every young person who might have
-                            been
-                            involved or
-                            present to see if they had information or evidence about what happened. It turned out that
-                            the
-                            village
-                            leader had had an argument with my client six months earlier, which caused the police to
-                            turn
-                            their
-                            attention on him. The police also suspected my client because he did not have an alibi. His
-                            little
-                            brother
-                            had confirmed that my client had gone out after 9pm and had not come back until much later.
-                            Also,
-                            the
-                            police
-                            found materials to make an explosive device in his home and believed my client had placed
-                            the
-                            explosive
-                            device with the intent to kill the victim.
-                        </p>
-                    </div>
-                    <div class="slider-wrap">
-                        <img src="images/stories_03/03_03.jpg" alt="">
-                        <p>The police arrested him, beat him, and questioned him repeatedly until they finally forced a
-                            confession.
-                            His
-                            brother was also arrested and tortured into accusing my client. The accused said that he put
-                            the
-                            device
-                            underground because he had gotten into an argument with the victim and had wanted to hurt
-                            him.
-                            In
-                            fact,
-                            my
-                            client didn’t even know the victim and so there was no way that he could have had an
-                            argument
-                            with
-                            him.
-                            But
-                            as my client confessed, the case was closed. My client initially maintained his false
-                            confession,
-                            believing
-                            that would give him a reduced sentence. Usually, a confession might reduce a life sentence
-                            to
-                            fifteen or
-                            twenty years in jail. But in this case, because the crime involved explosives, the long
-                            sentence
-                            stood
-                            unmitigated, and his false confession proved ultimately worthless.
-                        </p>
-                    </div>
-                    <div class="slider-wrap">
-                        <img src="images/stories_03/03_04.jpg" alt="">
-                        <p>During the court proceedings, the client repeatedly denied his involvement in the crime. He
-                            explained that all families in their village had explosive materials in their homes because
-                            there are stones everywhere in the village and that is the only way to level the land. He
-                            also
-                            denied being at the scene of the crime at 10pm – at that time he was back home and asleep.
-                            Nonetheless, the court sentenced him to life in prison. Upon seeing that his false testimony
-                            had
-                            landed his own brother in jail for life, the little brother committed suicide.
-                        </p>
-                    </div>
-                    <div class="slider-wrap">
-                        <img src="images/stories_03/03_05.jpg" alt="">
-                        <p>After the sentence has been handed down, there is sometimes a final chance at reducing the
-                            sentence by making a confession before entering the penal system, but the accused kept
-                            denying
-                            his guilt. The appeal process started immediately and dragged on for over a decade and a
-                            half.
-                            Likewise, to earn any credit for good behavior in prison, the prisoner must always confess
-                            and
-                            show remorse. However, this client insisted on his innocence. It was an unusual stance for a
-                            prisoner to take. He has already been sentenced to life in prison and this is a chance to
-                            reduce
-                            that sentence to maybe 15 years. The prison also doesn’t really want to look after prisoners
-                            for
-                            such a long time and into their old age, because life sentences are expensive. So the prison
-                            took notice of my client’s unusual insistence on his innocence, and the prison director
-                            recommended to me that this case might warrant further action.
-                        </p>
-                    </div>
-                    <div class="slider-wrap">
-                        <img src="images/stories_03/03_06.jpg" alt="">
-                        <p>We took on the case after the two appeals had failed, and we applied for a retrial based on a
-                            false conviction. At first, the judges said that they did not find anything suspicious and
-                            worthy of a re-trial, but after several more years of appeals, we were granted the re-trial.
-                            During the re-trial, we pointed out the lack of logic in the original case. Why would the
-                            accused have planted the explosive device there? How could he have been sure that the victim
-                            would appear at that precise time? Also, why would he have put an explosive device in the
-                            road
-                            if they had only had a minor argument? The evidence was all circumstantial and based on an
-                            unreliable confession.
-                        </p>
-                    </div>
-                    <div class="slider-wrap">
-                        <img src="images/stories_03/03_07.jpg" alt="">
-                        <p>My client has been in jail for over twenty years. If you have been in jail for twenty years
-                            or
-                            more, and you confess guilt, you can be released. The prison can help the prisoner’s
-                            application
-                            for relief, but the prisoner must first confess. Yet my client, who has been locked up for
-                            over
-                            twenty years and who could seek release tomorrow by confessing, still refuses to do so. This
-                            is
-                            why I want to help him. It has been seven years since I took on this case, and I just keep
-                            submitting materials to the court. I truly believe my client is innocent.
-                        </p>
-                    </div>
-                    <div class="slider-wrap">
-                        <h2>Do you know more about the role of defense lawyers in criminal cases now than you did before
-                            reading these stories?</h2>
+                        <h2>Do you feel more sympathy for the rights of the accused now than you did before reading
+                            these stories?</h2>
                         <form>
                             <div>
                                 <a class="toggle-label toggle-yes" data-slide-index="8" href="">
@@ -623,7 +406,7 @@
                         <h2>Are you a lawyer?</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="9" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
@@ -633,7 +416,9 @@
                                 </a>
                             </div>
                         </form>
-                        <h2 class="quiz-lawyer">If yes, did these stories inspire you to try new strategies in
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>If you're a lawyer, did these stories inspire you to try new strategies in
                             representing your clients?</h2>
                         <form>
                             <div class="toggle-set">
@@ -650,53 +435,35 @@
                     </div>
                 </div>
             </section>
+
+            <!--Story4-->
             <section id="story4" class="section-wrap">
-                <h1>Facing the Legal System<br>as a Juvenile Ethnic Minority Client</h1>
+                <!--<h1>Facing the Legal System as a Juvenile Ethnic Minority Client</h1>-->
                 <div class="slider">
-                    <div class="slider-wrap">
-                        <img src="images/stories_04/04_01.jpg" alt="">
-                        <p>I’m a member of an ethnic minority. Criminal defense was never my grand mission. I actually
-                            wanted to become a police officer or civil servant. But I took the exam and got into the law
-                            faculty. I was only 19 at the time, but I qualified with special consideration for my
-                            language ability.
-                        </p>
+                    <div>
+                        <figure>
+                            <img src="images/stories_04/04_01_eng.jpg" alt="">
+                        </figure>
                     </div>
-                    <div class="slider-wrap">
-                        <img src="images/stories_04/04_02.jpg" alt="">
-                        <p>As I know how to speak a minority language, naturally I was exposed to many situations in
-                            which ethnic minorities encountered the legal system. I took a job working at a center for
-                            minors, including orphans and other wards of the state. Many couldn’t speak Chinese well,
-                            which became a huge obstacle for them in the justice system. They were the weakest in
-                            society -- young, unsupported and dependent on the state, and they can’t even really
-                            communicate.
-                        </p>
+                    <div>
+                        <figure>
+                            <img src="images/stories_04/04_02_eng.jpg" alt="">
+                        </figure>
                     </div>
-                    <div class="slider-wrap">
-                        <img src="images/stories_04/04_03.jpg" alt="">
-                        <p>Unsurprisingly, my first case was not a major case, but it was meaningful to me. I helped my
-                            first client who was just sixteen years old. It was a minor robbery case. He didn’t know how
-                            to speak Chinese, which was one problem. And he came from a large family with a lot of
-                            siblings. As we were providing free legal services, I spoke with his parents, but they told
-                            me not to get involved – they told me to let their son learn the hard way through the
-                            judiciary system. Whatever the court decides he deserves is what he should get. Let him do
-                            his time.
-                        </p>
+                    <div>
+                        <figure>
+                            <img src="images/stories_04/04_03_eng.jpg" alt="">
+                        </figure>
                     </div>
-                    <div class="slider-wrap">
-                        <img src="images/stories_04/04_04.jpg" alt="">
-                        <p>But in my opinion, sending a minor to prison is a very complicated thing. It’s not
-                            necessarily good for the society or the individual. So, although parents are important, if
-                            they are narrow-minded, their children should not be left alone to face a complicated legal
-                            system that they don’t understand, and especially if they don’t even speak the language. We
-                            should step in to provide proper solutions, including education.
-                        </p>
+                    <div>
+                        <figure>
+                            <img src="images/stories_04/04_04_eng.jpg" alt="">
+                        </figure>
                     </div>
-                    <div class="slider-wrap">
-                        <img src="images/stories_04/04_05.jpg" alt="">
-                        <p>Ultimately, this was a very minor and simple case and I share the story only because it shows
-                            what it is like for someone from an ethnic minority and from an underprivileged family to
-                            face the legal system. These are the kinds of clients that I meet.
-                        </p>
+                    <div>
+                        <figure>
+                            <img src="images/stories_04/04_05_eng.jpg" alt="">
+                        </figure>
                     </div>
                     <div class="slider-wrap">
                         <h2>Do you feel more sympathy for juvenile defendants now than before reading these stories?
@@ -718,7 +485,7 @@
                         <h2>Are you a lawyer?</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="7" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
@@ -728,8 +495,10 @@
                                 </a>
                             </div>
                         </form>
-                        <h2 class="quiz-lawyer">If yes, did these stories inspire you to try new strategies in
-                            representing your clients? </h2>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>If you're a lawyer, did these stories inspire you to try new strategies in
+                            representing your clients?</h2>
                         <form>
                             <div class="toggle-set">
                                 <a class="toggle-label toggle-yes" data-slide-index="0" href="">
@@ -745,80 +514,44 @@
                     </div>
                 </div>
             </section>
+
+            <!--Story5-->
             <section id="story5" class="section-wrap">
-                <h1>Lost In Translation</h1>
+                <!--<h1>Lost In Translation</h1>-->
                 <div class="slider">
-                    <div class="slider-wrap">
-                        <img src="images/stories_05/05_01.jpg" alt="">
-                        <p>Several years ago, I represented an ethnic minority client in a robbery case. My client’s
-                            Chinese language ability was very limited – he could understand a little, just a few words
-                            here and there, but not reliable for more complex communication or official purpose – so I
-                            requested official interpretation provided by the court. I explained to the judge that this
-                            minority language had many dialects, so it would be important to have the right one. But the
-                            judge ruled against me, stating that my client could understand well enough and is simply
-                            delaying the proceedings.
-                        </p>
+                    <div>
+                        <figure>
+                            <img src="images/stories_05/05_01_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_05/05_02_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_05/05_03_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_05/05_04_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_05/05_05_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_05/05_06_eng.jpg" alt="">
+                        </figure>
                     </div>
                     <div class="slider-wrap">
-                        <img src="images/stories_05/05_02.jpg" alt="">
-                        <p>However, when I reviewed my client’s videotaped interrogations, I saw an obvious pattern of
-                            miscommunication. In this man’s dialect, it is normal in conversation for the listener to
-                            say, “mmm-hmm,” not as a deliberately affirmative reply to a question, but as a way to say
-                            “I’m listening,” a way of demonstrating that I am following and paying attention. This is
-                            how he spoke with me as well. But in Chinese, it is easy to interpret these sounds as an
-                            answer “yes,” especially in an interrogation with very sharp questioning. Even in court,
-                            after each lengthy question from the prosecution, the judge asked the client if he
-                            understood, and the judge himself misinterpreted the “mm-hmm”.
-                        </p>
-                    </div>
-                    <div class="slider-wrap">
-                        <img src="images/stories_05/05_03.jpg" alt="">
-                        <p>There were four co-defendants. My client was the only man among the four who persisted in
-                            claiming his innocence, despite torture. He said the investigators used computer cables to
-                            bind his wrists, then hung him from the ceiling. He told me they used a plastic cigarette
-                            lighter, not to burn him, but as a hard object to press between the ribs causing great pain
-                            but minimal bruising. When my client maintained his innocence, they made him the primary
-                            accused. We also found that there was a central piece of evidence, a closed-circuit video
-                            recording, which the police never reviewed. Why use torture and ignore such a central piece
-                            of evidence?
-                        </p>
-                    </div>
-                    <div class="slider-wrap">
-                        <img src="images/stories_05/05_04.jpg" alt="">
-                        <p>Luckily, we discovered a document at the detention center where he was being held, a physical
-                            examination form that the director had ordered when my client was first transferred there
-                            from the police station where he was interrogated. There were obvious signs of injury on my
-                            client upon his arrival, and so the doctors examined him and filed a report. At the time, my
-                            client told the doctors that he had been mistreated while in custody. The director of the
-                            detention center was doing his job correctly. He didn’t want to be accused of allowing
-                            mistreatment in his own jailhouse, so he made sure to document any signs of injury upon
-                            receiving the prisoner.
-                        </p>
-                    </div>
-                    <div class="slider-wrap">
-                        <img src="images/stories_05/05_05.jpg" alt="">
-                        <p>The result was quite good. We applied to strike down the confession based on torture. You can
-                            file before or during a trial, and we filed before the case even began in court. The police
-                            responded by discrediting the detention center’s physical exam. However, under law, that
-                            report from the detention center can be considered evidence because it is a signed, valid
-                            document. The judge ordered the police in charge of the investigation to appear, but only
-                            one came. It seemed that the other didn’t dare to show up to explain my client’s injuries.
-                            So we got all the coerced confessions thrown out. Although my client didn’t beat the charge
-                            in the end, we got a reduced sentence.
-                        </p>
-                    </div>
-                    <div class="slider-wrap">
-                        <img src="images/stories_05/05_06.jpg" alt="">
-                        <p>Cases need both effective representation and good translation for minorities. The two need to
-                            go hand in hand. Frankly, there is some bias in my area against ethnic minorities. I advise
-                            my ethnic minority clients to always find out exactly the charges against them. Doing these
-                            kinds of cases is difficult for me, but what motivates me to keep going is that I want to do
-                            something meaningful, and I enjoy the work.
-                        </p>
-                    </div>
-                    <div class="slider-wrap">
-                        <h2>Do you feel more sympathy for the rights of the accused now than you did before reading
-                            these stories?</h2>
+                        <h2>Do you know more about the need for procedural protections for defendants now than you did
+                            before reading these stories?</h2>
                         <form>
                             <div>
                                 <a class="toggle-label toggle-yes" data-slide-index="7" href="">
@@ -836,7 +569,7 @@
                         <h2>Are you a lawyer?</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
@@ -846,7 +579,9 @@
                                 </a>
                             </div>
                         </form>
-                        <h2 class="quiz-lawyer">If yes, did these stories inspire you to try new strategies in
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>If you're a lawyer, did these stories inspire you to try new strategies in
                             representing your clients?</h2>
                         <form>
                             <div class="toggle-set">
@@ -863,40 +598,424 @@
                     </div>
                 </div>
             </section>
+
+            <!--Story6-->
+            <section id="story6" class="section-wrap">
+                <!--<h1>Exonerating a Family</h1>-->
+                <div class="slider">
+                    <div>
+                        <figure>
+                            <img src="images/stories_06/06_01_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_06/06_02_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_06/06_03_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_06/06_04_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_06/06_05_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_06/06_06_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_06/06_07_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_06/06_08_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>Do you know more about the role of defense lawyers in criminal cases now than you did before reading these stories?</h2>
+                        <form>
+                            <div>
+                                <a class="toggle-label toggle-yes" data-slide-index="6" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="6" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>Are you a lawyer?</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="7" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>If you're a lawyer, did these stories inspire you to try new strategies in
+                            representing your clients?</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!--Story8-->
+            <section id="story8" class="section-wrap">
+                <!--<h1>Constitutional Protections for Ethnic Minority Defendants</h1>-->
+                <div class="slider">
+                    <div>
+                        <figure>
+                            <img src="images/stories_08/08_01_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_08/08_02_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_08/08_03_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_08/08_04_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_08/08_05_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>Do you know more about the need for procedural protections for defendants now than you did before reading these stories?</h2>
+                        <form>
+                            <div>
+                                <a class="toggle-label toggle-yes" data-slide-index="9" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="9" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>Are you a lawyer?</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="10" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>If you're a lawyer, did these stories inspire you to try new strategies in
+                            representing your clients?</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!--Story11-->
+            <section id="story11" class="section-wrap">
+                <!--<h1>Stories from Criminal Defense Lawyers 11</h1>-->
+                <div class="slider">
+                    <div>
+                        <figure>
+                            <img src="images/stories_11/11_01_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_11/11_02_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_11/11_03_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_11/11_04_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_11/11_05_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_11/11_06_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_11/11_07_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>Do you feel more sympathy for women in the criminal justice system now than before reading these stories?</h2>
+                        <form>
+                            <div>
+                                <a class="toggle-label toggle-yes" data-slide-index="8" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>Are you a lawyer?</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="9" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>If you're a lawyer, did these stories inspire you to try new strategies in
+                            representing your clients?</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!--Story14-->
+            <section id="story14" class="section-wrap">
+                <!--<h1>Interviewing the Client</h1>-->
+                <div class="slider">
+                    <div>
+                        <figure>
+                            <img src="images/stories_14/14_01_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_14/14_02_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_14/14_03_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_14/14_04_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_14/14_05_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>Do you feel more sympathy for juvenile defendants now than before reading these stories?</h2>
+                        <form>
+                            <div>
+                                <a class="toggle-label toggle-yes" data-slide-index="6" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="6" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>Are you a lawyer?</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="7" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>If you're a lawyer, did these stories inspire you to try new strategies in
+                            representing your clients?</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!--Story15-->
+            <section id="story15" class="section-wrap">
+                <!--<h1>Hope for the Future</h1>-->
+                <div class="slider">
+                    <div>
+                        <figure>
+                            <img src="images/stories_15/15_01_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_15/15_02_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_15/15_03_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_15/15_04_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_015/15_05_eng.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>Do you feel more sympathy for the rights of the accused now than you did before reading these stories?</h2>
+                        <form>
+                            <div>
+                                <a class="toggle-label toggle-yes" data-slide-index="6" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="6" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>Are you a lawyer?</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="7" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>If you're a lawyer, did these stories inspire you to try new strategies in
+                            representing your clients?</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
         </div>
-    </article>
-    </div>
-    <article id="share-stories" class="article article-wrap">
-        <h1>Share My Story</h1>
-        <form>
-            <div class="form-group">
-                <label class="questions" for="formGroupExampleInput">Name</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name (optional)">
-            </div>
-            <div class="form-group">
-                <label class="questions" for="exampleFormControlInput1">Email</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1"
-                    placeholder="name@example.com (optional)">
-            </div>
-            <div class="form-group">
-                <label class="questions">Are You a Criminal Defense Lawyer?</label>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                        value="option1">
-                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                        value="option2">
-                    <label class="form-check-label" for="inlineRadio2">No</label>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="questions" for="exampleFormControlTextarea1">My Story</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-danger">SUBMIT</button>
-        </form>
-    </article>
+
 </body>
+
 </html>
