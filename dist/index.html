@@ -5,15 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>刑辩律师的故事</title>
+
+    <!--Bootstrap CDN v4.5.0 ***jQuery first, then Popper.js, then Bootstrap JS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!--Sass/Scss-->
     <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
     <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css">
     <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <!--icon-->
     <link rel="shortcut icon" href="images/favicon_32.png" type="image/x-icon">
+
+    <!--jQuery: content slider, bxslider-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X19S0523JX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -22,6 +32,8 @@
 
         gtag('config', 'G-X19S0523JX');
     </script>
+
+    <!--Bootstrap CDN v4.5.0 ***jQuery first, then Popper.js, then Bootstrap JS-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -31,6 +43,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+
+    <!--jQuery: content slider, bxslider-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script>
@@ -44,7 +58,9 @@
             });
         });
     </script>
-    <script>
+
+    <!--randomize stories on page load-->
+    <!--<script>
         $(function () {
             var parent = $("#shuffle");
             var sections = parent.children();
@@ -52,7 +68,20 @@
                 parent.append(sections.splice(Math.floor(Math.random() * sections.length), 1)[0]);
             }
         });
+    </script>-->
+    <script>
+        $(function () {
+            var parent = $("#shuffle");
+            var sections = parent.children();
+            var random = Math.floor(Math.random() * sections.length);
+            sections.hide().eq(random).show();
+            while (sections.length) {
+                parent.append(sections.splice(Math.floor(Math.random() * sections.length), 1)[0]);
+            }
+        });
     </script>
+
+    <!--shuffle navbar on page load-->
     <script>
         $(function () {
             var parent = $("#nav-shuffle");
@@ -62,6 +91,8 @@
             }
         });
     </script>
+
+    <!--navbar-->
     <script>
         var prevScrollpos = window.pageYOffset;
         window.onscroll = function () {
@@ -74,6 +105,8 @@
             prevScrollpos = currentScrollPos;
         }
     </script>
+
+    <!--Quiz: Yes or No-->
     <script>
         $(document).ready(function () {
             $('body').on('click', '.toggle-label', function (e) {
@@ -83,11 +116,13 @@
             })
         });
     </script>
+
 </head>
 
 <body>
+    <!--Menu-->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"><img src="images/icon_60.png" alt="Stories from Criminal Defense Lawyers"></a>
+        <a class="navbar-brand" href="index.html"><img src="images/icon_60.png" alt="Stories from Criminal Defense Lawyers"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -100,32 +135,48 @@
                         刑辩律师的故事
                     </a>
                     <div id="nav-shuffle" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#story1">一名被告，四项死罪</a>
-                        <a class="dropdown-item" href="#story2">为精神病患者辩护</a>
-                        <a class="dropdown-item" href="#story3">一份撤回的供词和对清白的坚持</a>
-                        <a class="dropdown-item" href="#story4">面对法律系统的少数民族青少年</a>
-                        <a class="dropdown-item" href="#story5">传译失误</a>
+                        <a class="dropdown-item" href="story1.html">一名被告，四项死罪</a>
+                        <a class="dropdown-item" href="story2.html">为精神病患者辩护</a>
+                        <a class="dropdown-item" href="story3.html">一份撤回的供词和对清白的坚持</a>
+                        <a class="dropdown-item" href="story4.html">面对法律系统的少数民族青少年</a>
+                        <a class="dropdown-item" href="story5.html">传译失误</a>
+                        <!--202009 new stories-->
+                        <a class="dropdown-item" href="story6.html">替一个家庭沉冤得雪</a>
+                        <a class="dropdown-item" href="story8.html">针对少数族裔的宪法保护</a>
+                        <a class="dropdown-item" href="story11.html">刑辩律师的故事11</a>
+                        <a class="dropdown-item" href="story14.html">询问委托人</a>
+                        <a class="dropdown-item" href="story15.html">对未来的希望</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link my-2 my-sm-0" href="#share-stories">分享我的故事</a>
+                    <a class="nav-link my-2 my-sm-0" href="share-my-story.html">分享我的故事</a>
                 </li>
             </ul>
-            <!--Delete English Version-->
-            <!--<div class="nav-link">
+            <!--Search Function
+                <form class="form-inline my-2 my-sm-0 nav-link">
+                <div class="input-group">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light " type="submit">
+                        <span class="fas fa-search"></span>
+                    </button>
+                </div>
+            </form>-->
+            <div class="nav-link">
                 <a href="en.html" class="btn btn-outline-light my-2 my-sm-0">
                     <span>EN</span>
                 </a>
-            </div>-->
+            </div>
         </div>
     </nav>
-    <div class="title">刑辩律师的故事</div>
+
+    <div class="title"></div>
+
     <article id="pagination">
 
         <div id="shuffle">
             <!--Story1-->
             <section id="story1" class="section-wrap">
-                <h1>一名被告<br>四项死罪</h1>
+                <!--<h1>一名被告<br>四项死罪</h1>-->
                 <div class="slider">
                     <div>
                         <figure>
@@ -217,7 +268,7 @@
 
             <!--Story2-->
             <section id="story2" class="section-wrap">
-                <h1>为精神病患者辩护</h1>
+                <!--<h1>为精神病患者辩护</h1>-->
                 <div class="slider">
                     <div>
                         <figure>
@@ -294,7 +345,7 @@
 
             <!--Story3-->
             <section id="story3" class="section-wrap">
-                <h1>一份撤回的供词<br>和对清白的坚持</h1>
+                <!--<h1>一份撤回的供词<br>和对清白的坚持</h1>-->
                 <div class="slider">
                     <div>
                         <figure>
@@ -381,7 +432,7 @@
 
             <!--Story4-->
             <section id="story4" class="section-wrap">
-                <h1>面对法律系统的<br>少数民族青少年</h1>
+                <!--<h1>面对法律系统的<br>少数民族青少年</h1>-->
                 <div class="slider">
                     <div>
                         <figure>
@@ -455,10 +506,10 @@
                     </div>
                 </div>
             </section>
-            
+
             <!--Story5-->
             <section id="story5" class="section-wrap">
-                <h1>传译失误</h1>
+                <!--<h1>传译失误</h1>-->
                 <div class="slider">
                     <div>
                         <figure>
@@ -537,45 +588,419 @@
                     </div>
                 </div>
             </section>
-            
+
+            <!--Story6-->
+            <section id="story6" class="section-wrap">
+                <!--<h1>替一个家庭沉冤得雪</h1>-->
+                <div class="slider">
+                    <div>
+                        <figure>
+                            <img src="images/stories_06/06_01.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_06/06_02.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_06/06_03.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_06/06_04.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_06/06_05.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_06/06_06.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_06/06_07.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_06/06_08.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>读完这些故事，你是否更加加了解辩护律师在刑事案件中的作用？</h2>
+                        <form>
+                            <div>
+                                <a class="toggle-label toggle-yes" data-slide-index="9" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="9" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>你是律师吗？</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="10" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>如果你是律师，这些故事是否激励你尝试新的策略来为你的客户辩护？</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!--Story8-->
+            <section id="story8" class="section-wrap">
+                <!--<h1>针对少数族裔的宪法保护</h1>-->
+                <div class="slider">
+                    <div>
+                        <figure>
+                            <img src="images/stories_08/08_01.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_08/08_02.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_08/08_03.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_08/08_04.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_08/08_05.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>读完这些故事，你是否更加了解对被告进行程序保护的必要性？</h2>
+                        <form>
+                            <div>
+                                <a class="toggle-label toggle-yes" data-slide-index="6" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="6" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>你是律师吗？</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="7" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>如果你是律师，这些故事是否激励你尝试新的策略来为你的客户辩护？</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!--Story11-->
+            <section id="story11" class="section-wrap">
+                <!--<h1>刑辩律师的故事11</h1>-->
+                <div class="slider">
+                    <div>
+                        <figure>
+                            <img src="images/stories_11/11_01.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_11/11_02.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_11/11_03.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_11/11_04.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_11/11_05.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_11/11_06.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_11/11_07.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>读完这些故事，你是否更加理解刑事司法系统中的妇女？</h2>
+                        <form>
+                            <div>
+                                <a class="toggle-label toggle-yes" data-slide-index="8" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>你是律师吗？</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="9" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>如果你是律师，这些故事是否激励你尝试新的策略来为你的客户辩护？</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!--Story14-->
+            <section id="story14" class="section-wrap">
+                <!--<h1>询问委托人</h1>-->
+                <div class="slider">
+                    <div>
+                        <figure>
+                            <img src="images/stories_14/14_01.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_14/14_02.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_14/14_03.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_14/14_04.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_14/14_05.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>读完这些故事，你是否更加理解青少年被告人？</h2>
+                        <form>
+                            <div>
+                                <a class="toggle-label toggle-yes" data-slide-index="6" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="6" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>你是律师吗？</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="7" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>如果你是律师，这些故事是否激励你尝试新的策略来为你的客户辩护？</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!--Story15-->
+            <section id="story15" class="section-wrap">
+                <!--<h1>对未来的希望</h1>-->
+                <div class="slider">
+                    <div>
+                        <figure>
+                            <img src="images/stories_15/15_01.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_15/15_02.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_15/15_03.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_15/15_04.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="images/stories_15/15_05.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>读完这些故事，你是否更加理解被告的权利？</h2>
+                        <form>
+                            <div>
+                                <a class="toggle-label toggle-yes" data-slide-index="6" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="6" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>你是律师吗？</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="7" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="slider-wrap">
+                        <h2>如果你是律师，这些故事是否激励你尝试新的策略来为你的客户辩护？</h2>
+                        <form>
+                            <div class="toggle-set">
+                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                    <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
+                                    <i class="fas fa-check-circle"></i>
+                                </a>
+                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                    <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
         </div>
 
-        <article id="share-stories" class="article article-wrap">
-            <h1>分享我的故事</h1>
-            <form action="POST" data-netlify="true">
-                <div class="form-group">
-                    <label class="questions" for="name">名字</label>
-                    <input type="text" name="name" id="name" placeholder="（可略）" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label class="questions" for="email">电邮</label>
-                    <input type="email" name="email" id="email" placeholder="（可略）" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label class="questions">你是刑辩律师吗？</label>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="yes"" id=" yes" value="Yes">
-                        <label class="form-check-label" for="inlineRadio1">是</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="no" id="no" value="No">
-                        <label class="form-check-label" for="inlineRadio2">否</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="questions" for="message">我的故事</label>
-                    <textarea type="message" name="message" id="message" placeholder="请输入讯息" rows="3"
-                        class="form-control"></textarea>
-                </div>
-                <div class="form-group">
-                    <input type="file" name="myfile" id="myfile" placeholder="Upload File">
-                </div>
-                <div class="form-group">
-                    <div data-netlify-recaptcha="true"></div>
-                </div>
-                <button type="submit" class="btn btn-danger">提交</button>
-            </form>
-        </article>
 </body>
 
 </html>
