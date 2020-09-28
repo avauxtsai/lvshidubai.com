@@ -127,13 +127,13 @@ a:hover {
 @media screen and (max-width: 767px) {
   /* line 44, ../sass/screen.scss */
   .navbar {
-    padding: 0.3rem 0.5rem;
+    padding: 0rem 0.5rem;
   }
 }
 @media screen and (max-width: 767px) {
   /* line 57, ../sass/screen.scss */
   .navbar img {
-    width: 60%;
+    width: 55%;
   }
 }
 
@@ -182,7 +182,7 @@ a:hover {
 @media screen and (max-width: 767px) {
   /* line 99, ../sass/screen.scss */
   .title {
-    padding: 30px 10px 40px;
+    padding: 20px 10px 40px;
   }
 }
 

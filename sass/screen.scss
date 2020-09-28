@@ -52,11 +52,11 @@ a {
     transition: top 0.3s;
     @media screen and (max-width: 767px) {
         //height: 55px; 
-        padding: 0.3rem 0.5rem;
+        padding: 0rem 0.5rem;
     }
     img {
         @media screen and (max-width: 767px) {
-            width: 60%;
+            width: 55%;
         }        
     }    
 }
@@ -104,7 +104,7 @@ a {
     //letter-spacing: 2px; 
     @media screen and (max-width: 767px) {
         //font-size: 2.4rem;
-        padding: 30px 10px 40px;
+        padding: 20px 10px 40px;
     }   
 }
 
