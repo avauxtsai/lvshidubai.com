@@ -374,3 +374,8 @@ h2 {
   letter-spacing: 1px;
   border-radius: 50px;
 }
+
+/* line 263, ../sass/screen.scss */
+.test {
+  color: red;
+}
