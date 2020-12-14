@@ -54,9 +54,21 @@
                 touchEnabled: false,
                 pagerCustom: '#pagination',
                 //resposive: true,
-                //auto: true,
+                //auto: true,            
             });
         });
+    </script>
+    <script>
+        (function ($) {
+            $(document).ready(function () {
+                if (navigator.maxTouchPoints === 0) {
+                    $('.bx-viewport a').on("mousedown", function (e) {
+                        var linkUrl = $(this).prop('href');
+                        window.location.href = linkUrl;
+                    });
+                }
+            });
+        })(jQuery);
     </script>
 
     <!--randomize stories on page load-->
@@ -122,7 +134,8 @@
 <body>
     <!--Menu-->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="en.html"><img src="images/icon_60.png" alt="Stories from Criminal Defense Lawyers"></a>
+        <a class="navbar-brand" href="en.html"><img src="images/icon_60.png"
+                alt="Stories from Criminal Defense Lawyers"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -140,7 +153,7 @@
                         <a class="dropdown-item" href="story3-en.html">A Recanted Confession and an Insis...</a>
                         <a class="dropdown-item" href="story4-en.html">Facing the Legal System as a Juvenile...</a>
                         <a class="dropdown-item" href="story5-en.html">Lost In Translation</a>
-                        <!--202009 new stories-->    
+                        <!--202009 new stories-->
                         <a class="dropdown-item" href="story6-en.html">Exonerating a Family</a>
                         <a class="dropdown-item" href="story8-en.html">Constitutional Protections for Ethnic...</a>
                         <a class="dropdown-item" href="story11-en.html">Spousal Abuse</a>
@@ -242,7 +255,7 @@
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="11" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -254,16 +267,33 @@
                             representing your clients?</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="11" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="11" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>Choose Other Stories</h2>
+                            <!--<a class="dropdown-item" href="story1-en.html">One Defendant, Four Capital Crimes</a>-->
+                            <a class="dropdown-item" href="story2-en.html">Defending a Client with Mental ...</a>
+                            <a class="dropdown-item" href="story3-en.html">A Recanted Confession and an ...</a>
+                            <a class="dropdown-item" href="story4-en.html">Facing the Legal System as a ...</a>
+                            <a class="dropdown-item" href="story5-en.html">Lost In Translation</a>
+                            <!--202009 new stories-->
+                            <a class="dropdown-item" href="story6-en.html">Exonerating a Family</a>
+                            <a class="dropdown-item" href="story8-en.html">Constitutional Protections for ...</a>
+                            <a class="dropdown-item" href="story11-en.html">Spousal Abuse</a>
+                            <a class="dropdown-item" href="story14-en.html">Interviewing the Client</a>
+                            <a class="dropdown-item" href="story15-en.html">Hope for the Future</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -321,7 +351,7 @@
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -333,16 +363,33 @@
                             representing your clients?</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>Choose Other Stories</h2>
+                            <a class="dropdown-item" href="story1-en.html">One Defendant, Four Capital Crimes</a>
+                            <!--<a class="dropdown-item" href="story2-en.html">Defending a Client with Mental ...</a>-->
+                            <a class="dropdown-item" href="story3-en.html">A Recanted Confession and an ...</a>
+                            <a class="dropdown-item" href="story4-en.html">Facing the Legal System as a ...</a>
+                            <a class="dropdown-item" href="story5-en.html">Lost In Translation</a>
+                            <!--202009 new stories-->
+                            <a class="dropdown-item" href="story6-en.html">Exonerating a Family</a>
+                            <a class="dropdown-item" href="story8-en.html">Constitutional Protections for ...</a>
+                            <a class="dropdown-item" href="story11-en.html">Spousal Abuse</a>
+                            <a class="dropdown-item" href="story14-en.html">Interviewing the Client</a>
+                            <a class="dropdown-item" href="story15-en.html">Hope for the Future</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -410,7 +457,7 @@
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="10" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -422,16 +469,33 @@
                             representing your clients?</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="10" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="10" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>Choose Other Stories</h2>
+                            <a class="dropdown-item" href="story1-en.html">One Defendant, Four Capital Crimes</a>
+                            <a class="dropdown-item" href="story2-en.html">Defending a Client with Mental ...</a>
+                            <!--<a class="dropdown-item" href="story3-en.html">A Recanted Confession and an ...</a>-->
+                            <a class="dropdown-item" href="story4-en.html">Facing the Legal System as a ...</a>
+                            <a class="dropdown-item" href="story5-en.html">Lost In Translation</a>
+                            <!--202009 new stories-->
+                            <a class="dropdown-item" href="story6-en.html">Exonerating a Family</a>
+                            <a class="dropdown-item" href="story8-en.html">Constitutional Protections for ...</a>
+                            <a class="dropdown-item" href="story11-en.html">Spousal Abuse</a>
+                            <a class="dropdown-item" href="story14-en.html">Interviewing the Client</a>
+                            <a class="dropdown-item" href="story15-en.html">Hope for the Future</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -489,7 +553,7 @@
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -501,16 +565,33 @@
                             representing your clients?</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>Choose Other Stories</h2>
+                            <a class="dropdown-item" href="story1-en.html">One Defendant, Four Capital Crimes</a>
+                            <a class="dropdown-item" href="story2-en.html">Defending a Client with Mental ...</a>
+                            <a class="dropdown-item" href="story3-en.html">A Recanted Confession and an ...</a>
+                            <!--<a class="dropdown-item" href="story4-en.html">Facing the Legal System as a ...</a>-->
+                            <a class="dropdown-item" href="story5-en.html">Lost In Translation</a>
+                            <!--202009 new stories-->
+                            <a class="dropdown-item" href="story6-en.html">Exonerating a Family</a>
+                            <a class="dropdown-item" href="story8-en.html">Constitutional Protections for ...</a>
+                            <a class="dropdown-item" href="story11-en.html">Spousal Abuse</a>
+                            <a class="dropdown-item" href="story14-en.html">Interviewing the Client</a>
+                            <a class="dropdown-item" href="story15-en.html">Hope for the Future</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -573,7 +654,7 @@
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="9" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -585,16 +666,33 @@
                             representing your clients?</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="9" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="9" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>Choose Other Stories</h2>
+                            <a class="dropdown-item" href="story1-en.html">One Defendant, Four Capital Crimes</a>
+                            <a class="dropdown-item" href="story2-en.html">Defending a Client with Mental ...</a>
+                            <a class="dropdown-item" href="story3-en.html">A Recanted Confession and an ...</a>
+                            <a class="dropdown-item" href="story4-en.html">Facing the Legal System as a ...</a>
+                            <!--<a class="dropdown-item" href="story5-en.html">Lost In Translation</a>-->
+                            <!--202009 new stories-->
+                            <a class="dropdown-item" href="story6-en.html">Exonerating a Family</a>
+                            <a class="dropdown-item" href="story8-en.html">Constitutional Protections for ...</a>
+                            <a class="dropdown-item" href="story11-en.html">Spousal Abuse</a>
+                            <a class="dropdown-item" href="story14-en.html">Interviewing the Client</a>
+                            <a class="dropdown-item" href="story15-en.html">Hope for the Future</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -644,14 +742,15 @@
                         </figure>
                     </div>
                     <div class="slider-wrap">
-                        <h2>Do you know more about the role of defense lawyers in criminal cases now than you did before reading these stories?</h2>
+                        <h2>Do you know more about the role of defense lawyers in criminal cases now than you did before
+                            reading these stories?</h2>
                         <form>
                             <div>
-                                <a class="toggle-label toggle-yes" data-slide-index="6" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="9" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="6" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="9" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -662,11 +761,11 @@
                         <h2>Are you a lawyer?</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="7" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="10" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="11" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -678,16 +777,33 @@
                             representing your clients?</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="11" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="11" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>Choose Other Stories</h2>
+                            <a class="dropdown-item" href="story1-en.html">One Defendant, Four Capital Crimes</a>
+                            <a class="dropdown-item" href="story2-en.html">Defending a Client with Mental ...</a>
+                            <a class="dropdown-item" href="story3-en.html">A Recanted Confession and an ...</a>
+                            <a class="dropdown-item" href="story4-en.html">Facing the Legal System as a ...</a>
+                            <a class="dropdown-item" href="story5-en.html">Lost In Translation</a>
+                            <!--202009 new stories-->
+                            <!--<a class="dropdown-item" href="story6-en.html">Exonerating a Family</a>-->
+                            <a class="dropdown-item" href="story8-en.html">Constitutional Protections for ...</a>
+                            <a class="dropdown-item" href="story11-en.html">Spousal Abuse</a>
+                            <a class="dropdown-item" href="story14-en.html">Interviewing the Client</a>
+                            <a class="dropdown-item" href="story15-en.html">Hope for the Future</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -722,14 +838,15 @@
                         </figure>
                     </div>
                     <div class="slider-wrap">
-                        <h2>Do you know more about the need for procedural protections for defendants now than you did before reading these stories?</h2>
+                        <h2>Do you know more about the need for procedural protections for defendants now than you did
+                            before reading these stories?</h2>
                         <form>
                             <div>
-                                <a class="toggle-label toggle-yes" data-slide-index="9" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="6" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="9" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="6" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -740,11 +857,11 @@
                         <h2>Are you a lawyer?</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="10" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="7" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -756,16 +873,33 @@
                             representing your clients?</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>Choose Other Stories</h2>
+                            <a class="dropdown-item" href="story1-en.html">One Defendant, Four Capital Crimes</a>
+                            <a class="dropdown-item" href="story2-en.html">Defending a Client with Mental ...</a>
+                            <a class="dropdown-item" href="story3-en.html">A Recanted Confession and an ...</a>
+                            <a class="dropdown-item" href="story4-en.html">Facing the Legal System as a ...</a>
+                            <a class="dropdown-item" href="story5-en.html">Lost In Translation</a>
+                            <!--202009 new stories-->
+                            <a class="dropdown-item" href="story6-en.html">Exonerating a Family</a>
+                            <!--<a class="dropdown-item" href="story8-en.html">Constitutional Protections for ...</a>-->
+                            <a class="dropdown-item" href="story11-en.html">Spousal Abuse</a>
+                            <a class="dropdown-item" href="story14-en.html">Interviewing the Client</a>
+                            <a class="dropdown-item" href="story15-en.html">Hope for the Future</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -810,7 +944,8 @@
                         </figure>
                     </div>
                     <div class="slider-wrap">
-                        <h2>Do you feel more sympathy for women in the criminal justice system now than before reading these stories?</h2>
+                        <h2>Do you feel more sympathy for women in the criminal justice system now than before reading
+                            these stories?</h2>
                         <form>
                             <div>
                                 <a class="toggle-label toggle-yes" data-slide-index="8" href="">
@@ -832,7 +967,7 @@
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="10" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -844,16 +979,33 @@
                             representing your clients?</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="10" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="10" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>Choose Other Stories</h2>
+                            <a class="dropdown-item" href="story1-en.html">One Defendant, Four Capital Crimes</a>
+                            <a class="dropdown-item" href="story2-en.html">Defending a Client with Mental ...</a>
+                            <a class="dropdown-item" href="story3-en.html">A Recanted Confession and an ...</a>
+                            <a class="dropdown-item" href="story4-en.html">Facing the Legal System as a ...</a>
+                            <a class="dropdown-item" href="story5-en.html">Lost In Translation</a>
+                            <!--202009 new stories-->
+                            <a class="dropdown-item" href="story6-en.html">Exonerating a Family</a>
+                            <a class="dropdown-item" href="story8-en.html">Constitutional Protections for ...</a>
+                            <!--<a class="dropdown-item" href="story11-en.html">Spousal Abuse</a>-->
+                            <a class="dropdown-item" href="story14-en.html">Interviewing the Client</a>
+                            <a class="dropdown-item" href="story15-en.html">Hope for the Future</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -888,7 +1040,8 @@
                         </figure>
                     </div>
                     <div class="slider-wrap">
-                        <h2>Do you feel more sympathy for juvenile defendants now than before reading these stories?</h2>
+                        <h2>Do you feel more sympathy for juvenile defendants now than before reading these stories?
+                        </h2>
                         <form>
                             <div>
                                 <a class="toggle-label toggle-yes" data-slide-index="6" href="">
@@ -910,7 +1063,7 @@
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -922,16 +1075,33 @@
                             representing your clients?</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>Choose Other Stories</h2>
+                            <a class="dropdown-item" href="story1-en.html">One Defendant, Four Capital Crimes</a>
+                            <a class="dropdown-item" href="story2-en.html">Defending a Client with Mental ...</a>
+                            <a class="dropdown-item" href="story3-en.html">A Recanted Confession and an ...</a>
+                            <a class="dropdown-item" href="story4-en.html">Facing the Legal System as a ...</a>
+                            <a class="dropdown-item" href="story5-en.html">Lost In Translation</a>
+                            <!--202009 new stories-->
+                            <a class="dropdown-item" href="story6-en.html">Exonerating a Family</a>
+                            <a class="dropdown-item" href="story8-en.html">Constitutional Protections for ...</a>
+                            <a class="dropdown-item" href="story11-en.html">Spousal Abuse</a>
+                            <!--<a class="dropdown-item" href="story14-en.html">Interviewing the Client</a>-->
+                            <a class="dropdown-item" href="story15-en.html">Hope for the Future</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -966,7 +1136,8 @@
                         </figure>
                     </div>
                     <div class="slider-wrap">
-                        <h2>Do you feel more sympathy for women in the criminal justice system now than before reading these stories?</h2>
+                        <h2>Do you feel more sympathy for women in the criminal justice system now than before reading
+                            these stories?</h2>
                         <form>
                             <div>
                                 <a class="toggle-label toggle-yes" data-slide-index="6" href="">
@@ -988,7 +1159,7 @@
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -1000,16 +1171,33 @@
                             representing your clients?</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>Choose Other Stories</h2>
+                            <a class="dropdown-item" href="story1-en.html">One Defendant, Four Capital Crimes</a>
+                            <a class="dropdown-item" href="story2-en.html">Defending a Client with Mental ...</a>
+                            <a class="dropdown-item" href="story3-en.html">A Recanted Confession and an ...</a>
+                            <a class="dropdown-item" href="story4-en.html">Facing the Legal System as a ...</a>
+                            <a class="dropdown-item" href="story5-en.html">Lost In Translation</a>
+                            <!--202009 new stories-->
+                            <a class="dropdown-item" href="story6-en.html">Exonerating a Family</a>
+                            <a class="dropdown-item" href="story8-en.html">Constitutional Protections for ...</a>
+                            <a class="dropdown-item" href="story11-en.html">Spousal Abuse</a>
+                            <a class="dropdown-item" href="story14-en.html">Interviewing the Client</a>
+                            <!--<a class="dropdown-item" href="story15-en.html">Hope for the Future</a>-->
+                        </div>
                     </div>
                 </div>
             </section>

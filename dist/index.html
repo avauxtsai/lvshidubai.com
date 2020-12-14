@@ -53,10 +53,21 @@
                 adaptiveHeight: true,
                 touchEnabled: false,
                 pagerCustom: '#pagination',
-                //resposive: true,
-                //auto: true,
             });
         });
+    </script>
+    <!--SOLVED: Links in sliders aren't working-->
+    <script>
+        (function ($) {
+            $(document).ready(function () {
+                if (navigator.maxTouchPoints === 0) {
+                    $('.bx-viewport a').on("mousedown", function (e) {
+                        var linkUrl = $(this).prop('href');
+                        window.location.href = linkUrl;
+                    });
+                }
+            });
+        })(jQuery);
     </script>
 
     <!--randomize stories on page load-->
@@ -122,7 +133,8 @@
 <body>
     <!--Menu-->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html"><img src="images/icon_60.png" alt="Stories from Criminal Defense Lawyers"></a>
+        <a class="navbar-brand" href="index.html"><img src="images/icon_60.png"
+                alt="Stories from Criminal Defense Lawyers"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -241,7 +253,7 @@
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="11" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -252,16 +264,33 @@
                         <h2>如果你是律师，这些故事是否激励你尝试新的策略来为你的客户辩护？</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="11" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="11" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>选择其他故事</h2>
+                            <!--<a class="dropdown-item" href="story1.html">一名被告，四项死罪</a>-->
+                            <a class="dropdown-item" href="story2.html">为精神病患者辩护</a>
+                            <a class="dropdown-item" href="story3.html">一份撤回的供词和对清白的坚持</a>
+                            <a class="dropdown-item" href="story4.html">面对法律系统的少数民族青少年</a>
+                            <a class="dropdown-item" href="story5.html">传译失误</a>
+                            <!--202009 new stories-->
+                            <a class="dropdown-item" href="story6.html">替一个家庭沉冤得雪</a>
+                            <a class="dropdown-item" href="story8.html">针对少数族裔的宪法保护</a>
+                            <a class="dropdown-item" href="story11.html">家暴</a>
+                            <a class="dropdown-item" href="story14.html">询问委托人</a>
+                            <a class="dropdown-item" href="story15.html">对未来的希望</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -318,7 +347,7 @@
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -329,16 +358,33 @@
                         <h2>如果你是律师，这些故事是否激励你尝试新的策略来为你的客户辩护？</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>选择其他故事</h2>
+                            <a class="dropdown-item" href="story1.html">一名被告，四项死罪</a>
+                            <!--<a class="dropdown-item" href="story2.html">为精神病患者辩护</a>-->
+                            <a class="dropdown-item" href="story3.html">一份撤回的供词和对清白的坚持</a>
+                            <a class="dropdown-item" href="story4.html">面对法律系统的少数民族青少年</a>
+                            <a class="dropdown-item" href="story5.html">传译失误</a>
+                            <!--202009 new stories-->
+                            <a class="dropdown-item" href="story6.html">替一个家庭沉冤得雪</a>
+                            <a class="dropdown-item" href="story8.html">针对少数族裔的宪法保护</a>
+                            <a class="dropdown-item" href="story11.html">家暴</a>
+                            <a class="dropdown-item" href="story14.html">询问委托人</a>
+                            <a class="dropdown-item" href="story15.html">对未来的希望</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -405,7 +451,7 @@
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="10" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -416,16 +462,33 @@
                         <h2>如果你是律师，这些故事是否激励你尝试新的策略来为你的客户辩护？</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="10" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="10" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>选择其他故事</h2>
+                            <a class="dropdown-item" href="story1.html">一名被告，四项死罪</a>
+                            <a class="dropdown-item" href="story2.html">为精神病患者辩护</a>
+                            <!--<a class="dropdown-item" href="story3.html">一份撤回的供词和对清白的坚持</a>-->
+                            <a class="dropdown-item" href="story4.html">面对法律系统的少数民族青少年</a>
+                            <a class="dropdown-item" href="story5.html">传译失误</a>
+                            <!--202009 new stories-->
+                            <a class="dropdown-item" href="story6.html">替一个家庭沉冤得雪</a>
+                            <a class="dropdown-item" href="story8.html">针对少数族裔的宪法保护</a>
+                            <a class="dropdown-item" href="story11.html">家暴</a>
+                            <a class="dropdown-item" href="story14.html">询问委托人</a>
+                            <a class="dropdown-item" href="story15.html">对未来的希望</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -482,7 +545,7 @@
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -493,16 +556,33 @@
                         <h2>如果你是律师，这些故事是否激励你尝试新的策略来为你的客户辩护？</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>选择其他故事</h2>
+                            <a class="dropdown-item" href="story1.html">一名被告，四项死罪</a>
+                            <a class="dropdown-item" href="story2.html">为精神病患者辩护</a>
+                            <a class="dropdown-item" href="story3.html">一份撤回的供词和对清白的坚持</a>
+                            <!--<a class="dropdown-item" href="story4.html">面对法律系统的少数民族青少年</a>-->
+                            <a class="dropdown-item" href="story5.html">传译失误</a>
+                            <!--202009 new stories-->
+                            <a class="dropdown-item" href="story6.html">替一个家庭沉冤得雪</a>
+                            <a class="dropdown-item" href="story8.html">针对少数族裔的宪法保护</a>
+                            <a class="dropdown-item" href="story11.html">家暴</a>
+                            <a class="dropdown-item" href="story14.html">询问委托人</a>
+                            <a class="dropdown-item" href="story15.html">对未来的希望</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -564,7 +644,7 @@
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="9" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -575,16 +655,33 @@
                         <h2>如果你是律师，这些故事是否激励你尝试新的策略来为你的客户辩护？</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="9" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="9" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>选择其他故事</h2>
+                            <a class="dropdown-item" href="story1.html">一名被告，四项死罪</a>
+                            <a class="dropdown-item" href="story2.html">为精神病患者辩护</a>
+                            <a class="dropdown-item" href="story3.html">一份撤回的供词和对清白的坚持</a>
+                            <a class="dropdown-item" href="story4.html">面对法律系统的少数民族青少年</a>
+                            <!--<a class="dropdown-item" href="story5.html">传译失误</a>-->
+                            <!--202009 new stories-->
+                            <a class="dropdown-item" href="story6.html">替一个家庭沉冤得雪</a>
+                            <a class="dropdown-item" href="story8.html">针对少数族裔的宪法保护</a>
+                            <a class="dropdown-item" href="story11.html">家暴</a>
+                            <a class="dropdown-item" href="story14.html">询问委托人</a>
+                            <a class="dropdown-item" href="story15.html">对未来的希望</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -656,7 +753,7 @@
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="11" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -667,16 +764,33 @@
                         <h2>如果你是律师，这些故事是否激励你尝试新的策略来为你的客户辩护？</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="11" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="11" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>选择其他故事</h2>
+                            <a class="dropdown-item" href="story1.html">一名被告，四项死罪</a>
+                            <a class="dropdown-item" href="story2.html">为精神病患者辩护</a>
+                            <a class="dropdown-item" href="story3.html">一份撤回的供词和对清白的坚持</a>
+                            <a class="dropdown-item" href="story4.html">面对法律系统的少数民族青少年</a>
+                            <a class="dropdown-item" href="story5.html">传译失误</a>
+                            <!--202009 new stories-->
+                            <!--<a class="dropdown-item" href="story6.html">替一个家庭沉冤得雪</a>-->
+                            <a class="dropdown-item" href="story8.html">针对少数族裔的宪法保护</a>
+                            <a class="dropdown-item" href="story11.html">家暴</a>
+                            <a class="dropdown-item" href="story14.html">询问委托人</a>
+                            <a class="dropdown-item" href="story15.html">对未来的希望</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -733,7 +847,7 @@
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -744,16 +858,33 @@
                         <h2>如果你是律师，这些故事是否激励你尝试新的策略来为你的客户辩护？</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>选择其他故事</h2>
+                            <a class="dropdown-item" href="story1.html">一名被告，四项死罪</a>
+                            <a class="dropdown-item" href="story2.html">为精神病患者辩护</a>
+                            <a class="dropdown-item" href="story3.html">一份撤回的供词和对清白的坚持</a>
+                            <a class="dropdown-item" href="story4.html">面对法律系统的少数民族青少年</a>
+                            <a class="dropdown-item" href="story5.html">传译失误</a>
+                            <!--202009 new stories-->
+                            <a class="dropdown-item" href="story6.html">替一个家庭沉冤得雪</a>
+                            <!--<a class="dropdown-item" href="story8.html">针对少数族裔的宪法保护</a>-->
+                            <a class="dropdown-item" href="story11.html">家暴</a>
+                            <a class="dropdown-item" href="story14.html">询问委托人</a>
+                            <a class="dropdown-item" href="story15.html">对未来的希望</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -820,7 +951,7 @@
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="10" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -831,16 +962,33 @@
                         <h2>如果你是律师，这些故事是否激励你尝试新的策略来为你的客户辩护？</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="10" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="10" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>选择其他故事</h2>
+                            <a class="dropdown-item" href="story1.html">一名被告，四项死罪</a>
+                            <a class="dropdown-item" href="story2.html">为精神病患者辩护</a>
+                            <a class="dropdown-item" href="story3.html">一份撤回的供词和对清白的坚持</a>
+                            <a class="dropdown-item" href="story4.html">面对法律系统的少数民族青少年</a>
+                            <a class="dropdown-item" href="story5.html">传译失误</a>
+                            <!--202009 new stories-->
+                            <a class="dropdown-item" href="story6.html">替一个家庭沉冤得雪</a>
+                            <a class="dropdown-item" href="story8.html">针对少数族裔的宪法保护</a>
+                            <!--<a class="dropdown-item" href="story11.html">家暴</a>-->
+                            <a class="dropdown-item" href="story14.html">询问委托人</a>
+                            <a class="dropdown-item" href="story15.html">对未来的希望</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -897,7 +1045,7 @@
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -908,16 +1056,33 @@
                         <h2>如果你是律师，这些故事是否激励你尝试新的策略来为你的客户辩护？</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>选择其他故事</h2>
+                            <a class="dropdown-item" href="story1.html">一名被告，四项死罪</a>
+                            <a class="dropdown-item" href="story2.html">为精神病患者辩护</a>
+                            <a class="dropdown-item" href="story3.html">一份撤回的供词和对清白的坚持</a>
+                            <a class="dropdown-item" href="story4.html">面对法律系统的少数民族青少年</a>
+                            <a class="dropdown-item" href="story5.html">传译失误</a>
+                            <!--202009 new stories-->
+                            <a class="dropdown-item" href="story6.html">替一个家庭沉冤得雪</a>
+                            <a class="dropdown-item" href="story8.html">针对少数族裔的宪法保护</a>
+                            <a class="dropdown-item" href="story11.html">家暴</a>
+                            <!--<a class="dropdown-item" href="story14.html">询问委托人</a>-->
+                            <a class="dropdown-item" href="story15.html">对未来的希望</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -974,7 +1139,7 @@
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
@@ -985,16 +1150,33 @@
                         <h2>如果你是律师，这些故事是否激励你尝试新的策略来为你的客户辩护？</h2>
                         <form>
                             <div class="toggle-set">
-                                <a class="toggle-label toggle-yes" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-yes" data-slide-index="8" href="">
                                     <input class="toggle-input" type="radio" name="RadioGroup1" value="yes" />
                                     <i class="fas fa-check-circle"></i>
                                 </a>
-                                <a class="toggle-label toggle-no" data-slide-index="0" href="">
+                                <a class="toggle-label toggle-no" data-slide-index="8" href="">
                                     <input class=" toggle-input" type="radio" name="RadioGroup1" value="no" />
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </div>
                         </form>
+                    </div>
+                    <!--choose other stories-->
+                    <div>
+                        <div id="nav-shuffle" class="slider-last">
+                            <h2>选择其他故事</h2>
+                            <a class="dropdown-item" href="story1.html">一名被告，四项死罪</a>
+                            <a class="dropdown-item" href="story2.html">为精神病患者辩护</a>
+                            <a class="dropdown-item" href="story3.html">一份撤回的供词和对清白的坚持</a>
+                            <a class="dropdown-item" href="story4.html">面对法律系统的少数民族青少年</a>
+                            <a class="dropdown-item" href="story5.html">传译失误</a>
+                            <!--202009 new stories-->
+                            <a class="dropdown-item" href="story6.html">替一个家庭沉冤得雪</a>
+                            <a class="dropdown-item" href="story8.html">针对少数族裔的宪法保护</a>
+                            <a class="dropdown-item" href="story11.html">家暴</a>
+                            <a class="dropdown-item" href="story14.html">询问委托人</a>
+                            <!--<a class="dropdown-item" href="story15.html">对未来的希望</a>-->
+                        </div>
                     </div>
                 </div>
             </section>

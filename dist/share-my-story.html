@@ -54,9 +54,22 @@
                 touchEnabled: false,
                 pagerCustom: '#pagination',
                 //resposive: true,
-                //auto: true,
+                //auto: true,            
             });
         });
+    </script>
+    <!--SOLVED: Links in sliders aren't working-->
+    <script>
+        (function ($) {
+            $(document).ready(function () {
+                if (navigator.maxTouchPoints === 0) {
+                    $('.bx-viewport a').on("mousedown", function (e) {
+                        var linkUrl = $(this).prop('href');
+                        window.location.href = linkUrl;
+                    });
+                }
+            });
+        })(jQuery);
     </script>
 
     <!--randomize stories on page load-->
