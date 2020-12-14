@@ -152,7 +152,6 @@ a:hover {
 /* line 80, ../sass/screen.scss */
 .dropdown-menu {
   margin: .3rem 0 0;
-  color: #212529;
 }
 /* line 83, ../sass/screen.scss */
 .dropdown-menu .dropdown-item {
@@ -200,7 +199,7 @@ a:hover {
 }*/
 /* line 124, ../sass/screen.scss */
 h2 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #777777;
 }
 @media screen and (max-width: 767px) {
@@ -279,66 +278,128 @@ h2 {
 }
 
 /* line 185, ../sass/screen.scss */
+.slider-last {
+  padding: 40px 50px;
+  vertical-align: middle;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* line 185, ../sass/screen.scss */
+  .slider-last {
+    padding: 30px 50px;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* line 185, ../sass/screen.scss */
+  .slider-last {
+    padding: 20px 45px;
+  }
+}
+@media screen and (max-width: 345px) {
+  /* line 185, ../sass/screen.scss */
+  .slider-last {
+    padding: 10px 25px;
+  }
+}
+/* line 197, ../sass/screen.scss */
+.slider-last h2 {
+  padding-top: 0;
+  margin-bottom: 10px;
+}
+/* line 201, ../sass/screen.scss */
+.slider-last a {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #fff;
+  background-color: #ff6f2e;
+  border-radius: 25px;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* line 201, ../sass/screen.scss */
+  .slider-last a {
+    margin: 9px 0;
+    padding: 9px 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* line 201, ../sass/screen.scss */
+  .slider-last a {
+    font-size: .9rem;
+    margin: 8px 0;
+    padding: 8px 0;
+  }
+}
+@media screen and (max-width: 345px) {
+  /* line 201, ../sass/screen.scss */
+  .slider-last a {
+    font-size: .9rem;
+    margin: 7px 0;
+    padding: 7px 0;
+  }
+}
+
+/* line 228, ../sass/screen.scss */
 .toggle-yes {
   color: #00e673;
   padding-right: 15px;
 }
 @media screen and (max-width: 767px) {
-  /* line 185, ../sass/screen.scss */
+  /* line 228, ../sass/screen.scss */
   .toggle-yes {
     padding-right: 5px;
   }
 }
 
-/* line 193, ../sass/screen.scss */
+/* line 236, ../sass/screen.scss */
 .toggle-no {
   color: #ff4d40;
   padding-left: 15px;
 }
 @media screen and (max-width: 767px) {
-  /* line 193, ../sass/screen.scss */
+  /* line 236, ../sass/screen.scss */
   .toggle-no {
     padding-left: 5px;
   }
 }
 
-/* line 201, ../sass/screen.scss */
+/* line 244, ../sass/screen.scss */
 .toggle-yes.toggle-selected {
   color: #000066;
 }
 
-/* line 205, ../sass/screen.scss */
+/* line 248, ../sass/screen.scss */
 .toggle-no.toggle-selected {
   color: #000066;
 }
 
-/* line 209, ../sass/screen.scss */
+/* line 252, ../sass/screen.scss */
 .toggle-label {
   display: inline-block;
   cursor: pointer;
   font-size: 80px;
 }
 
-/* line 216, ../sass/screen.scss */
+/* line 259, ../sass/screen.scss */
 .toggle-input {
   position: absolute;
   left: -9999px;
 }
 
-/* line 221, ../sass/screen.scss */
+/* line 264, ../sass/screen.scss */
 .article {
   padding: 20px 35px;
   font-weight: 300;
 }
-/* line 224, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .article .form-group {
   margin-bottom: 30px;
 }
-/* line 226, ../sass/screen.scss */
+/* line 269, ../sass/screen.scss */
 .article .form-group .form-check-label {
   color: #fff;
 }
-/* line 230, ../sass/screen.scss */
+/* line 273, ../sass/screen.scss */
 .article .questions {
   float: left;
   padding-bottom: 10px;
@@ -347,13 +408,13 @@ h2 {
   font-weight: 400;
 }
 @media screen and (max-width: 767px) {
-  /* line 230, ../sass/screen.scss */
+  /* line 273, ../sass/screen.scss */
   .article .questions {
     font-size: 1.1rem;
   }
 }
 
-/* line 242, ../sass/screen.scss */
+/* line 285, ../sass/screen.scss */
 .article-wrap {
   max-width: 600px;
   min-width: 250px;
@@ -365,7 +426,7 @@ h2 {
   box-sizing: border-box;
 }
 
-/* line 254, ../sass/screen.scss */
+/* line 297, ../sass/screen.scss */
 .btn-danger {
   margin: 50px 0 100px;
   background-color: #ff3300;
@@ -373,9 +434,4 @@ h2 {
   font-size: 1.2rem;
   letter-spacing: 1px;
   border-radius: 50px;
-}
-
-/* line 263, ../sass/screen.scss */
-.test {
-  color: red;
 }
